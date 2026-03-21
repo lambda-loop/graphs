@@ -21,6 +21,10 @@ public:
       graph->edges[it->second][it->first] = 1;
     }
   }
+
+  int get(int i, int j) {
+    return edges[i][j];
+  }
 };
 
 
