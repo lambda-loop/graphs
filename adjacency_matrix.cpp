@@ -11,6 +11,8 @@ public:
     for (auto it = begin; it != end; ++it) {
       graph->edges[it->first][it->second] = 1;
     }
+
+    return graph;
   }
 
   template <typename Iter>
@@ -20,6 +22,8 @@ public:
       graph->edges[it->first][it->second] = 1;
       graph->edges[it->second][it->first] = 1;
     }
+
+    return graph;
   }
 
   int get(int i, int j) {
