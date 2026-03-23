@@ -63,6 +63,10 @@ executable Haskell
 
     -- Modules included in this executable, other than Main.
     other-modules:   Graph
+                   , AdjacencyMatrix
+                   , IncidenceMatrix
+                   , AdjacencyList
+                   , DirectedStar
 
     -- LANGUAGE extensions used by modules in this package.
     -- other-extensions:
@@ -70,6 +74,8 @@ executable Haskell
     -- Other library packages from which modules are imported.
     build-depends:    base ^>=4.20.2.0
                     , containers
+                    , vector
+                    , stm
 
     -- Directories containing source files.
     hs-source-dirs:   src
