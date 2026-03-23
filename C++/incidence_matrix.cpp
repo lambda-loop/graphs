@@ -65,4 +65,9 @@ public:
 
     return tempNeighbors;
   }
+  ~IncidenceMatrix() {
+    for (int i = 0; i < numEdges; i++)
+      delete[] matrix[i];
+    delete[] matrix;
+  }
 };

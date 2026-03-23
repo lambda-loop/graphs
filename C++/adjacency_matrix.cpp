@@ -61,4 +61,10 @@ public:
 
     return tempNeighbors;
   }
+
+  ~AdjacencyMatrix() {
+    for (int i = 0; i < numVertices; i++)
+      delete[] matrix[i];
+    delete[] matrix;
+  }
 };
