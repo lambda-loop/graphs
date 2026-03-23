@@ -2,10 +2,11 @@
 #include <iostream>
 #include <map>
 #include <algorithm>
+#include "graph.h"
 
 using namespace std;
 
-class AdjacencyList {
+class AdjacencyList : public Graph {
 private: 
   map<int, vector<int>> adj;
   bool isDirected;

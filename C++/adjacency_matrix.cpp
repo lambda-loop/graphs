@@ -2,10 +2,11 @@
 #include <iostream>
 #include <map>
 #include <algorithm>
+#include "graph.h"
 
 using namespace std;
 
-class AdjacencyMatrix {
+class AdjacencyMatrix : public Graph{
     private: 
         int** matrix;
         int numVertices;
