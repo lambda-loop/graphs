@@ -2,7 +2,6 @@
 
 #include <iostream>
 #include <vector>
-using namespace std;
 
 class Graph {
 protected:
@@ -15,7 +14,7 @@ public:
 
   virtual void removeVertex() {}
 
-  virtual vector<int> getNeighbors() { return vector<int>(); }
+  virtual std::vector<int> getNeighbors() { return std::vector<int>(); }
 
   virtual void printGraph() {}
 };
