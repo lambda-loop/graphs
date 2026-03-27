@@ -16,6 +16,10 @@ public:
   AdjacencyList(bool directed = false) : isDirected(directed) {
   }
 
+  AdjacencyList(std::map<int, std::vector<int>> initialAdj, bool directed = false) 
+        : adj(std::move(initialAdj)), isDirected(directed) {
+  }
+
   void addVertex(int node) {
     // Ensure non-duplicate vertices
     // int node will be vertex's label
