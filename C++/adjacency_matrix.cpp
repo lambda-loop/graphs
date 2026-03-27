@@ -2,7 +2,6 @@
 #include <iostream>
 #include <map>
 #include <algorithm>
-#include "graph.h"
 
 using namespace std;
 
@@ -67,4 +66,18 @@ public:
       delete[] matrix[i];
     delete[] matrix;
   }
+
+
+  int** getMatrix() {
+    return this->matrix;
+  } 
+
+  bool isDirected_() {
+    return this->isDirected;
+  }
+
+  int getNumVerteces() {
+    return this->numVertices;
+  }
+
 };
