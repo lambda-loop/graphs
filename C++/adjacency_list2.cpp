@@ -10,8 +10,8 @@
 
 struct DeepTree {
   int val;
-  std::list<DeepTree*> sons; 
-  std::list<DeepTree*> return_arrows;
+  std::vector<DeepTree*> sons; 
+  std::vector<DeepTree*> return_arrows;
 };
 
 class AdjacencyList : public Graph {
