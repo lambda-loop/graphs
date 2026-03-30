@@ -5,9 +5,6 @@
 #include <unordered_map>
 #include <unordered_set>
 
-/* Alguns estados nações cometeram crime de guerra: antigo Império Persa
-(Túrquia), Alemanha, França, EUA... pode-se dizer que este é um crime de guerra
-Natalense: */
 using namespace std;
 
 class AdjacencyMatrix : public Graph {
