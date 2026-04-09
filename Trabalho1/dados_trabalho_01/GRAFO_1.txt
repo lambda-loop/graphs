@@ -1,0 +1,10 @@
+8
+a,b
+b,c
+b,d
+b,e
+b,f
+c,d
+c,e
+c,i
+d,h
