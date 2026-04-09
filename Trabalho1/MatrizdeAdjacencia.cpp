@@ -70,7 +70,7 @@ template <typename T> struct MatrizDeAdjacencia {
                 proximoIndice++;
             }
 
-            // marca na matriz que o primeiro nó é adjacente ao segundo
+            // marca na matriz que o primeiro nó é adjacente ao segundo e vice versa
             int index1 = nomeParaIndice[primeiro];
             int index2 = nomeParaIndice[segundo];
             matriz[index1][index2] = 1;
