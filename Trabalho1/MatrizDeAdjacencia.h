@@ -1,110 +1,127 @@
 #pragma once
 
-#include <iostream>
+#include <algorithm>
 #include <fstream>
-#include <sstream>
+#include <iostream>
 #include <map>
-#include <vector>
-#include <utility>
+#include <sstream>
 #include <string>
+#include <utility>
+#include <vector>
 
 using namespace std;
 
-// Implementação de grafo (não direcionado)
-
 template <typename T> struct MatrizDeAdjacencia {
-    vector<vector<int>> matriz;
-    int numVertices;
+  vector<vector<int>> matriz;
+  int numVertices;
 
-    // precisamos disso para englobar os casos em que os nós não são números naturais
-    // exemplo: nó 'a'   -> indice 0
-    // exemplo: indice 0 -> nó 'a'
-    map<T, int> nomeParaIndice;
-    vector<T> indiceParaNome;
+  map<T, int> nomeParaIndice;
+  vector<T> indiceParaNome;
 
-    // construtor vazio
-    MatrizDeAdjacencia() : numVertices(0){}
+  MatrizDeAdjacencia() : numVertices(0) {}
 
-    // gerando lista de adjacencia a partir de uma matriz já montada
-    // Note que a matriz tem que ser quadrada
-    MatrizDeAdjacencia(vector<vector<int>> m, vector<T> nomes)
-        : matriz(move(m)), numVertices(static_cast<int>(matriz.size())), indiceParaNome(move(nomes)) {
+  MatrizDeAdjacencia(vector<vector<int>> m, vector<T> nomes)
+      : matriz(move(m)), numVertices(static_cast<int>(matriz.size())),
+        indiceParaNome(move(nomes)) {
+    if (numVertices != (int)indiceParaNome.size()) {
+      cerr << "Erro: O número de nomes fornecidos não coincide com o tamanho "
+              "da matriz.";
+      return;
+    }
+    for (int i = 0; i < numVertices; i++) {
+      nomeParaIndice[indiceParaNome[i]] = i;
+    }
+  }
 
-            if(numVertices != (int)indiceParaNome.size()){
-                cerr << "Erro: O número de nomes fornecidos não coincide com o tamanho da matriz.";
-                return;
-            }
+  MatrizDeAdjacencia(string caminhoDoGrafo) {
+    ifstream arquivo(caminhoDoGrafo);
 
-            for (int i = 0; i < numVertices; i++){
-                nomeParaIndice[indiceParaNome[i]] = i;
-            }
-        }
-    
-    // gerando matriz de adjacencia a partir dos arquivos disponibilizados
-    // pelo professor
-    MatrizDeAdjacencia(string caminhoDoGrafo){
-        ifstream arquivo(caminhoDoGrafo);
+    arquivo >> numVertices;
+    matriz.assign(numVertices, vector<int>(numVertices, 0));
+    indiceParaNome.resize(numVertices);
 
-        if (!arquivo.is_open()){
-            cerr << "Erro ao abrir o arquivo: " << caminhoDoGrafo << endl;
-            return;
-        }
+    T primeiro, segundo;
+    char virgula;
+    int proximoIndice = 0;
 
-        // Lendo número de vértices
-        arquivo >> numVertices;
+    while (arquivo >> primeiro >> virgula >> segundo) {
+      if (nomeParaIndice.find(primeiro) == nomeParaIndice.end()) {
+        nomeParaIndice[primeiro] = proximoIndice;
+        indiceParaNome[proximoIndice] = primeiro;
+        proximoIndice++;
+      }
+      if (nomeParaIndice.find(segundo) == nomeParaIndice.end()) {
+        nomeParaIndice[segundo] = proximoIndice;
+        indiceParaNome[proximoIndice] = segundo;
+        proximoIndice++;
+      }
+      int index1 = nomeParaIndice[primeiro];
+      int index2 = nomeParaIndice[segundo];
+      matriz[index1][index2] = 1;
+      matriz[index2][index1] = 1;
+    }
+    arquivo.close();
+  }
 
-        
-        // Lendo arestas e nomes únicos
-        struct Aresta {T primeiro, segundo;};
-        vector<Aresta> conexoes;
-        map<T, int> nomesOrdenados; // usando map para armazenar os nomes em ordem lexicografica (nos casos de char e int)
+  void adicionarVertice(T novoVertice, vector<T> vizinhos) {
+    int novoVerticeIdx = numVertices;
+    nomeParaIndice[novoVertice] = novoVerticeIdx;
+    indiceParaNome.push_back(novoVertice);
 
-        T primeiro, segundo;
-        char virgula;
-        while(arquivo >> primeiro >> virgula >> segundo){
-            conexoes.push_back({primeiro, segundo});
-            nomesOrdenados[primeiro] = 0;
-            nomesOrdenados[segundo]  = 0;
-        }
-        arquivo.close();
+    for (auto &linha : matriz) {
+      linha.push_back(0);
+    }
+    numVertices++;
+    matriz.push_back(vector<int>(numVertices, 0));
 
+    for (const auto &vizinho : vizinhos) {
+      if (nomeParaIndice.count(vizinho)) {
+        int vizinhoIdx = nomeParaIndice[vizinho];
+        matriz[novoVerticeIdx][vizinhoIdx] = 1;
+        matriz[vizinhoIdx][novoVerticeIdx] = 1;
+      }
+    }
+  }
 
-        // atribuindo índices baseados na ordem lexicográfica do map
-        matriz.assign(numVertices, vector<int>(numVertices, 0));
-        indiceParaNome.resize(numVertices);
+  void removerVertice(T vertice) {
+    if (nomeParaIndice.find(vertice) == nomeParaIndice.end())
+      return;
 
-        int indiceAtual = 0;
-        for (auto& par : nomesOrdenados){
-            T nome = par.first;
-            nomeParaIndice[nome] = indiceAtual;
-            indiceParaNome[indiceAtual] = nome;
-            indiceAtual++;
-        }
+    int idx = nomeParaIndice[vertice];
 
-        // preenchendo a matrix com as conexões
-        for (const auto& aresta : conexoes){
-            int indice1 = nomeParaIndice[aresta.primeiro];
-            int indice2 = nomeParaIndice[aresta.segundo];
-            matriz[indice1][indice2] = 1;
-            matriz[indice2][indice1] = 1;
-        }
+    matriz.erase(matriz.begin() + idx);
+
+    for (auto &linha : matriz) {
+      linha.erase(linha.begin() + idx);
     }
 
-    void imprimirGrafo(){
-        if (numVertices == 0) return;
+    indiceParaNome.erase(indiceParaNome.begin() + idx);
+    nomeParaIndice.erase(vertice);
 
-        cout << "  ";
-        for (int i = 0; i < numVertices; i++){
-            cout << indiceParaNome[i] << " ";
-        }
-        cout << endl;
-
-        for (int i = 0; i < numVertices; i++){
-            cout << indiceParaNome[i] << " ";
-            for (int j = 0; j < numVertices; j++){
-                cout << matriz[i][j] << " ";
-            }
-            cout << endl;
-        }
+    for (auto &pair : nomeParaIndice) {
+      if (pair.second > idx) {
+        pair.second--;
+      }
     }
+    numVertices--;
+  }
+
+  void imprimirGrafo() {
+    if (numVertices == 0)
+      return;
+
+    cout << "  ";
+    for (int i = 0; i < numVertices; i++) {
+      cout << indiceParaNome[i] << " ";
+    }
+    cout << endl;
+
+    for (int i = 0; i < numVertices; i++) {
+      cout << indiceParaNome[i] << " ";
+      for (int j = 0; j < numVertices; j++) {
+        cout << matriz[i][j] << " ";
+      }
+      cout << endl;
+    }
+  }
 };
