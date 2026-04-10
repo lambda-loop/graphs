@@ -7,6 +7,7 @@
 #include <vector>
 #include <utility>
 #include <string>
+#include <algorithm>
 
 using namespace std;
 
@@ -18,7 +19,9 @@ template <typename T> struct ListaDeAdjacencia{
     ListaDeAdjacencia(){}
 
     // gerando lista de adjacencia a partir de um map já montado
-    ListaDeAdjacencia(map<T, vector<T>> m) : adjacentes(move(m)){}
+    ListaDeAdjacencia(map<T, vector<T>> m) : adjacentes(move(m)){
+        ordenarVizinhos();
+    }
 
     // gerando lista de adjacencia a partir dos arquivos disponibilizados
     // pelo professor
@@ -42,6 +45,15 @@ template <typename T> struct ListaDeAdjacencia{
             adjacentes[segundo].push_back(primeiro);
         }
 
+        // função para garantir a ordem lexicografica dos adjacentes
+        // (necessario para as buscas)
+        ordenarVizinhos();
+    }
+
+    void ordenarVizinhos(){
+        for (auto& [vertice, vizinhos] : adjacentes){
+            sort(vizinhos.begin(), vizinhos.end());
+        }
     }
 
     void imprimirGrafo(){
