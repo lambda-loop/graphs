@@ -57,9 +57,7 @@ template <typename T> struct MatrizDeAdjacencia {
         // Lendo arestas e nomes únicos
         struct Aresta {T primeiro, segundo;};
         vector<Aresta> conexoes;
-
-        // usando map para armazenar os nomes em ordem lexicografica
-        map<T, int> nomesOrdenados;
+        map<T, int> nomesOrdenados; // usando map para armazenar os nomes em ordem lexicografica (nos casos de char e int)
 
         T primeiro, segundo;
         char virgula;
@@ -90,40 +88,6 @@ template <typename T> struct MatrizDeAdjacencia {
             matriz[indice1][indice2] = 1;
             matriz[indice2][indice1] = 1;
         }
-
-        // DEPRECATED:
-        
-        // arquivo >> numVertices;
-        // matriz.assign(numVertices, vector<int>(numVertices, 0));
-        // indiceParaNome.resize(numVertices);
-
-        // T primeiro, segundo;
-        // char virgula;
-        // int proximoIndice = 0;
-        
-        // while(arquivo >> primeiro >> virgula >> segundo){
-
-        //     // registra primeiro nó se for novo
-        //     if(nomeParaIndice.find(primeiro) == nomeParaIndice.end()){
-        //         nomeParaIndice[primeiro] = proximoIndice;
-        //         indiceParaNome[proximoIndice] = primeiro;
-        //         proximoIndice++;
-        //     }
-
-        //     //registra segundo nó se for novo
-        //     if(nomeParaIndice.find(segundo) == nomeParaIndice.end()){
-        //         nomeParaIndice[segundo] = proximoIndice;
-        //         indiceParaNome[proximoIndice] = segundo;
-        //         proximoIndice++;
-        //     }
-
-        //     // marca na matriz que o primeiro nó é adjacente ao segundo e vice versa
-        //     int index1 = nomeParaIndice[primeiro];
-        //     int index2 = nomeParaIndice[segundo];
-        //     matriz[index1][index2] = 1;
-        //     matriz[index2][index1] = 1;
-        // }
-        // arquivo.close();
     }
 
     void imprimirGrafo(){
