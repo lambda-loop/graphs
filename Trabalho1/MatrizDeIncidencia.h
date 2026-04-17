@@ -48,6 +48,8 @@ struct GrafoMatrizInc {
     registrarConexao(origem, destino);
   }
 
+  void adicionarVertice() {}
+
   void imprimirMatriz() {
     int qtdArestas = matriz.size();
 

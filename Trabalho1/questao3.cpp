@@ -1,4 +1,4 @@
-#include "MatrizDeIndicencia.h"
+#include "MatrizDeIncidencia.h"
 
 int main() {
   GrafoMatrizInc g(8);
