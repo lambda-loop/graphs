@@ -4,6 +4,7 @@
 #include <cctype>
 #include <vector>
 #include "MatrizDeIncidencia.h"
+#include "CalcularGrauVertices.h"
 
 void processarGrafo(std::string nomeArquivo) {
     std::ifstream arquivo(nomeArquivo);
@@ -22,6 +23,7 @@ void processarGrafo(std::string nomeArquivo) {
 
     std::string s_origem, s_destino;
     char virgula;
+
     std::string linha;
     // lê a linha inteira
     while (arquivo >> linha) {
@@ -43,7 +45,8 @@ void processarGrafo(std::string nomeArquivo) {
 
     arquivo.close();
 
-    g.imprimirMatriz();
+    CalculadorDeGrau calc;
+    calc.calcularEImprimir(g);
     
     std::cout << "\n------------------------------------------\n";
 }

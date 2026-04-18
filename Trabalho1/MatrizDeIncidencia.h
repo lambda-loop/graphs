@@ -1,3 +1,5 @@
+#pragma once
+
 #include <cctype>
 #include <iomanip>
 #include <iostream>
