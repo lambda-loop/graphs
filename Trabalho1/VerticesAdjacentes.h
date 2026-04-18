@@ -16,10 +16,7 @@ struct VerticesAdjacentes {
         int idxV = grafo.nomeParaIndice.at(v);
 
         if (grafo.matriz[idxU][idxV] == 1) {
-            std::cout << "Os vertices " << u << " e " << v << " SAO adjacentes.\n";
-        } 
-        /*else {
-            std::cout << "Os vertices " << u << " e " << v << " NAO sao adjacentes.\n";
-        }*/
+            std::cout << "Os vértices " << u << " e " << v << " são adjacentes.\n";
+        }
     }
 };
