@@ -2,75 +2,112 @@
 
 #include <cctype>
 #include <iomanip>
+#include <fstream>
 #include <iostream>
+#include <map>
+#include <string>
 #include <vector>
 
-struct GrafoMatrizInc {
-  int vertices;
-  bool direcionado;
+template <typename T> struct MatrizDeIncidencia {
+  std::map<T, int> nomeParaIndice;
+  std::vector<T> indiceParaNome;
   std::vector<std::vector<int>> matriz;
-  bool usarLetrasNaImpressao;
 
-  // função que faz o trabalho real usando os índices do computador (0, 1, 2...)
-  void registrarConexao(int origem, int destino) {
-    // cria uma nova aresta com o tamanho dos vértices, toda zerada
-    std::vector<int> novaAresta(vertices, 0);
-
-    if (direcionado) {
-      novaAresta[origem] = -1;
-      novaAresta[destino] = 1;
-    } else {
-      novaAresta[origem] = 1;
-      novaAresta[destino] = 1;
+  MatrizDeIncidencia(std::string caminhoDoGrafo) {
+    std::ifstream arquivo(caminhoDoGrafo);
+    if (!arquivo.is_open()) {
+      std::cerr << "Erro ao abrir o arquivo." << std::endl;
+      return;
     }
 
-    matriz.push_back(novaAresta);
+    int numVertices;
+    arquivo >> numVertices;
+    T v1, v2;
+    char virgula;
+
+    while (arquivo >> v1 >> virgula >> v2) {
+      adicionarAresta(v1, v2);
+    }
+
+    arquivo.close();
   }
 
-  GrafoMatrizInc(int ver, bool dir = false)
-      : vertices(ver), direcionado(dir), usarLetrasNaImpressao(false) {}
+  void adicionarVertice(T novoVertice, std::vector<T> vizinhos = {}) {
+    if (nomeParaIndice.find(novoVertice) == nomeParaIndice.end()) {
+      nomeParaIndice[novoVertice] = indiceParaNome.size();
+      indiceParaNome.push_back(novoVertice);
 
-  // versao com numeros
-  void adicionarAresta(int origem_usuario, int destino_usuario) {
-    // para que o usuario faça as ligações entre vértices começando do 1
-    int origem = origem_usuario - 1;
-    int destino = destino_usuario - 1;
+      int numArestas = matriz.empty() ? 0 : matriz[0].size();
+      matriz.push_back(std::vector<int>(numArestas, 0));
+    }
 
-    registrarConexao(origem, destino);
+    for (const T &vizinho : vizinhos) {
+      adicionarAresta(novoVertice, vizinho);
+    }
   }
 
-  // versao com letras
-  void adicionarAresta(char origem_usuario, char destino_usuario) {
-    // pra imprimir as letras na matriz
-    usarLetrasNaImpressao = true;
+  void adicionarAresta(T v1, T v2) {
+    adicionarVertice(v1);
+    adicionarVertice(v2);
 
-    int origem = std::tolower(origem_usuario) - 'a';
-    int destino = std::tolower(destino_usuario) - 'a';
+    int idx1 = nomeParaIndice[v1];
+    int idx2 = nomeParaIndice[v2];
 
-    registrarConexao(origem, destino);
+    for (auto &linha : matriz) {
+      linha.push_back(0);
+    }
+
+    int novaArestaIdx = matriz[0].size() - 1;
+    matriz[idx1][novaArestaIdx] = 1;
+    matriz[idx2][novaArestaIdx] = 1;
   }
 
-  void adicionarVertice() {}
+  void removerVertice(T nome) {
+    if (nomeParaIndice.find(nome) == nomeParaIndice.end())
+      return;
 
-  void imprimirMatriz() {
-    int qtdArestas = matriz.size();
+    int idx = nomeParaIndice[nome];
 
-    std::cout << "     ";
-    for (int j = 0; j < vertices; ++j) {
-      if (usarLetrasNaImpressao) {
-        // converte 0, 1, 2 para A, B, C...
-        char nomeVertice = 'a' + j;
-        std::cout << "V" << nomeVertice << "  ";
-      } else {
-        std::cout << "V" << (j + 1) << "  ";
+    std::vector<bool> colunasParaRemover(matriz[0].size(), false);
+    for (size_t j = 0; j < matriz[0].size(); j++) {
+      if (matriz[idx][j] != 0)
+        colunasParaRemover[j] = true;
+    }
+
+    matriz.erase(matriz.begin() + idx);
+
+    for (int j = matriz[0].size() - 1; j >= 0; j--) {
+      if (colunasParaRemover[j]) {
+        for (auto &linha : matriz) {
+          linha.erase(linha.begin() + j);
+        }
       }
     }
-    std::cout << "\n    " << std::string(vertices * 4, '-') << "\n";
 
-    for (int i = 0; i < qtdArestas; ++i) {
-      std::cout << "A" << i + 1 << " | ";
-      for (int j = 0; j < vertices; ++j) {
-        std::cout << std::setw(2) << matriz[i][j] << "  ";
+    indiceParaNome.erase(indiceParaNome.begin() + idx);
+    nomeParaIndice.clear();
+    for (size_t i = 0; i < indiceParaNome.size(); i++) {
+      nomeParaIndice[indiceParaNome[i]] = i;
+    }
+  }
+
+  void imprimirGrafo() {
+    if (matriz.empty())
+      return;
+
+    std::cout << "    ";
+    for (size_t j = 0; j < matriz[0].size(); j++) {
+      std::cout << "A" << j << " ";
+    }
+    std::cout << "\n";
+
+    for (size_t i = 0; i < matriz.size(); i++) {
+      if (indiceParaNome[i] == ',')
+        continue;
+
+      std::cout << indiceParaNome[i] << " | ";
+      for (int val : matriz[i]) {
+        std::cout << val << "  ";
       }
       std::cout << "\n";
     }

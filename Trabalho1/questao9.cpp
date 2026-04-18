@@ -1,5 +1,6 @@
 #include "ListaDeAdjacencia.h"
 #include "MatrizDeAdjacencia.h"
+#include "MatrizDeIncidencia.h"
 #include <vector>
 
 int main() {
@@ -10,6 +11,9 @@ int main() {
   ListaDeAdjacencia<char> GRAFO_1_LISTA_ADJ("./dados_trabalho_01/GRAFO_1.txt");
   MatrizDeAdjacencia<char> GRAFO_1_MATRIZ_ADJ(
       "./dados_trabalho_01/GRAFO_1.txt");
+  MatrizDeIncidencia<char> GRAFO_1_MATRIZ_INC(
+      "./dados_trabalho_01/GRAFO_1.txt");
+
   char novoVertice = 'g';
   vector<char> listaVizinhos = {'e', 'f'};
 
@@ -27,5 +31,11 @@ int main() {
   GRAFO_1_MATRIZ_ADJ.adicionarVertice(novoVertice, listaVizinhos);
   GRAFO_1_MATRIZ_ADJ.imprimirGrafo();
 
+  cout << "Adicionando vértice 'g' na Matriz de Incidência:" << endl;
+  cout << "Antes:" << endl;
+  GRAFO_1_MATRIZ_INC.imprimirGrafo();
+  cout << "Depois:" << endl;
+  GRAFO_1_MATRIZ_INC.adicionarVertice(novoVertice, listaVizinhos);
+  GRAFO_1_MATRIZ_INC.imprimirGrafo();
   return 0;
 }
