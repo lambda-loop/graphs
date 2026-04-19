@@ -3,11 +3,13 @@
 // Maldita obrigatoriedade de escrever em português 😡
 // Btw, meu teclado tem unicode 🍿🙂
 
-#include "ListaDeAdjacencia.h"
+#include "ListaDeAdjacenciac.h"
 #include <memory>
 #include <optional>
 #include <set>
 #include <stack>
+#include <map>
+#include <vector>
 
 class DFS {
 public:
@@ -15,6 +17,11 @@ public:
   std::set<DFS*> sons;
   // std::set<std::shared_ptr<DFS>> return_edges;
   std::set<DFS*> return_edges;
+  std::set<DFS*> forward_edges; 
+  std::set<DFS*> cross_edges;  
+
+  std::map<int, int> PES;
+  std::map<int, int> PSS;
 
 
   // versão empty
@@ -24,14 +31,14 @@ public:
     this->return_edges = {};
   }
 
-  DFS (ListaDeAdjacencia<int> g, int P0) {
+  DFS (ListaDeAdjacencia<int> &g, int VAL) {
     // a fila do slide
     std::stack<int> stack;
-    stack.push(P0); // fazendo uso da P0
+    stack.push(VAL); // fazendo uso da P0
     
     // o array dos visitados do slide
     std::set<int> visited;
-    visited.insert(P0);
+    visited.insert(VAL);
 
     // pq o grupo usou MAP, eu tenho q fazer assim. 
     // triste estou 😭 
@@ -41,50 +48,71 @@ public:
     std::map<int, std::vector<int>::iterator> iters;
 
     // muito importante pra não bugar..
-    iters[P0] = g.adjacentes[P0].begin();
+    iters[VAL] = g.adjacentes[VAL].begin();
+    PES[VAL] = 0;
 
     std::map<int, int> PES;
     std::map<int, int> PSS;
-    int PE_counter = 0;
+    int PE_counter = 1;
     int PS_counter = 0;
     
     // A estrutura intermediária
-    DFS dfs = DFS(P0);
+    // DFS dfs = DFS(P0);
 
     // LOUCURA:
     std::map<int, DFS*> refs;
     // std::map<int, std::shared_ptr<DFS>> refs; 
     // refs[P0]        = std::make_shared<DFS>(dfs);
-    // this->val = P0;
-    // refs[P0] = this;
-    // predecessor[P0] = std::nullopt;
+    this->val = VAL;
+    refs[VAL] = this;
+    predecessor[VAL] = std::nullopt;
 
     // e vamos pro algoritmo.
     while(!stack.empty()) {
       int P0 = stack.top();
+      std::cout << "nó atual: " << P0 << std::endl;
       
+      std::cout << "Tem nó pra visitar?" << std::endl;
       // tem nós pra visitar?
       if (iters[P0] != g.adjacentes[P0].end()) {
+        std::cout << "Tem" << std::endl;
         // visitando o..
         int P = *iters[P0];
 
         // se já foi visitado // TODO: devia ser o iters do P
+        
+        //  AI! doeu
+        std::cout << "Ja foi visitado" << std::endl;
         if (visited.find(P) != visited.end()) { 
-          // aresta de retorno?
-          if (predecessor[P0] != P) {
-            // note que P já foi visitado..
+          
+          // 1. Se não tem tempo de saída (PSS) ainda, significa que P ainda está na pilha!
+          // Logo, estamos apontando de volta para um ancestral.
+          if (PSS.find(P) == PSS.end()) {
+            std::cout << "Eh aresta de retorno" << std::endl;
             refs[P0]->return_edges.insert(refs[P]);
           }
-            
-          /* 
-          theyre related? if yes, is a return edge.
-          if not, just skip.
-           * */
+          
+          // 2. Se JÁ TEM tempo de saída, o nó P já foi totalmente processado.
+          // Resta saber se é um descendente (Avanço) ou se é de outro galho (Cruzamento).
+          else {
+            // Se eu (P0) entrei ANTES dele (P), ele é meu descendente.
+            if (PES[P0] < PES[P]) {
+              std::cout << "Eh aresta de avanco" << std::endl;
+              refs[P0]->forward_edges.insert(refs[P]); 
+            } 
+            // Se eu (P0) entrei DEPOIS dele (P), ele é um primo de outro galho.
+            else if (PES[P0] > PES[P]) {
+              std::cout << "Eh aresta de cruzamento" << std::endl;
+              refs[P0]->cross_edges.insert(refs[P]);
+            }
+          }
         }
 
         // se ainda não foi visitado
         else {
+          std::cout << "Empilha o " << P << std::endl;
           stack.push(P);
+          std::cout << "Marca o " << P << " como visitado" << std::endl;
           visited.insert(P);
           iters[P] = g.adjacentes[P].begin();
 
@@ -108,16 +136,19 @@ public:
 
       // caso ja foi visitado, desempilha!
       else {
+
+        std::cout << "Tem não." << std::endl;
         // current vira o pai dele após o pop
+        std::cout << "Desempilha " << P0                 <<  std::endl;
+        std::cout << "PS de " << P0 << ": " << PS_counter << std::endl;
+
         stack.pop();
         PSS[P0] = PS_counter;
+
         PS_counter++;
       }
     }
+    this->PES = PES;
+    this->PSS = PSS;
   };
-
-
-
-
-
 };

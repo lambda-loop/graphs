@@ -1,6 +1,6 @@
 
 // 17 - Representação do grafo-direcionado a partir da matriz de incidencia
-#include "GrafoMatrizInc.h"
+#include "MatrizDeIncidencia.h"
 
 int main() {
   GrafoMatrizInc g1(13, true);
