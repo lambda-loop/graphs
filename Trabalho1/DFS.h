@@ -20,6 +20,9 @@ public:
   std::set<DFS*> forward_edges; 
   std::set<DFS*> cross_edges;  
 
+  std::map<int, int> PES;
+  std::map<int, int> PSS;
+
 
   // versão empty
   DFS (int n) {
