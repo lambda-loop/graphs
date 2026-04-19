@@ -7,20 +7,20 @@
 #include <string>
 #include <utility>
 #include <vector>
-using namespace std;
+// using namespace std;
 
 template <typename T> struct ListaDeAdjacencia {
-    map<T, vector<T>> adjacentes;
+  std::map<T, std::vector<T>> adjacentes;
 
-    ListaDeAdjacencia(map<T, vector<T>> m) : adjacentes(move(m)){
+    ListaDeAdjacencia(std::map<T, std::vector<T>> m) : adjacentes(move(m)){
         ordenarVizinhos();
     }
 
-    ListaDeAdjacencia(string caminhoDoGrafo) {
-        ifstream arquivo(caminhoDoGrafo);
+    ListaDeAdjacencia(std::string caminhoDoGrafo) {
+      std::ifstream arquivo(caminhoDoGrafo);
         T primeiro, segundo;
         char virgula;
-        string linha;
+    std::string linha;
         getline(arquivo, linha);
         while (arquivo >> primeiro >> virgula >> segundo) {
             adjacentes[primeiro].push_back(segundo);
@@ -35,7 +35,7 @@ template <typename T> struct ListaDeAdjacencia {
         }
     }
 
-    void adicionarVertice(T novoVertice, vector<T> listaVizinhos) {
+    void adicionarVertice(T novoVertice, std::vector<T> listaVizinhos) {
         adjacentes[novoVertice] = listaVizinhos;
     }
 
@@ -51,11 +51,11 @@ template <typename T> struct ListaDeAdjacencia {
 
     void imprimirGrafo() {
         for (const auto &[vertice, vizinhos] : adjacentes) {
-            cout << vertice << ": ";
+      std::cout << vertice << ": ";
             for (const auto &vizinho : vizinhos) {
-                cout << vizinho << " ";
+        std::cout << vizinho << " ";
             }
-            cout << endl;
+      std::cout << std::endl;
         }
     }
 };
