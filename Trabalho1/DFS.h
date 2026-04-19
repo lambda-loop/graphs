@@ -17,6 +17,8 @@ public:
   std::set<DFS*> sons;
   // std::set<std::shared_ptr<DFS>> return_edges;
   std::set<DFS*> return_edges;
+  std::set<DFS*> forward_edges; 
+  std::set<DFS*> cross_edges;  
 
 
   // versão empty
@@ -75,19 +77,31 @@ public:
 
         // se já foi visitado // TODO: devia ser o iters do P
         
+        //  AI! doeu
         std::cout << "Ja foi visitado" << std::endl;
         if (visited.find(P) != visited.end()) { 
-          // aresta de retorno?
-          if (predecessor[P0] != P) {
+          
+          // 1. Se não tem tempo de saída (PSS) ainda, significa que P ainda está na pilha!
+          // Logo, estamos apontando de volta para um ancestral.
+          if (PSS.find(P) == PSS.end()) {
             std::cout << "Eh aresta de retorno" << std::endl;
-            // note que P já foi visitado..
             refs[P0]->return_edges.insert(refs[P]);
           }
-            
-          /* 
-          theyre related? if yes, is a return edge.
-          if not, just skip.
-           * */
+          
+          // 2. Se JÁ TEM tempo de saída, o nó P já foi totalmente processado.
+          // Resta saber se é um descendente (Avanço) ou se é de outro galho (Cruzamento).
+          else {
+            // Se eu (P0) entrei ANTES dele (P), ele é meu descendente.
+            if (PES[P0] < PES[P]) {
+              std::cout << "Eh aresta de avanco" << std::endl;
+              refs[P0]->forward_edges.insert(refs[P]); 
+            } 
+            // Se eu (P0) entrei DEPOIS dele (P), ele é um primo de outro galho.
+            else if (PES[P0] > PES[P]) {
+              std::cout << "Eh aresta de cruzamento" << std::endl;
+              refs[P0]->cross_edges.insert(refs[P]);
+            }
+          }
         }
 
         // se ainda não foi visitado
