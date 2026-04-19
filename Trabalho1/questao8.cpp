@@ -6,34 +6,33 @@
 
 using namespace std;
 
-void criarGrafoDeTeste() {
-  ofstream arquivo("grafo_teste8.txt");
-  arquivo << "5\n"; // Número de vértices
-  arquivo << "A , B\n";
-  arquivo << "B , C\n";
-  arquivo << "C , D\n";
-  arquivo << "D , E\n";
-  arquivo << "E , A\n"; // Forma um pentágono (5 arestas)
-  arquivo.close();
-}
-
 int main() {
-  criarGrafoDeTeste();
 
-  cout << "=== TESTE QUESTAO 8: TOTAL DE ARESTAS ===\n";
-  cout << "Grafo esperado: 5 arestas (A-B, B-C, C-D, D-E, E-A)\n\n";
-
-  MatrizDeIncidencia<char> matInc("grafo_teste8.txt");
+  cout << "=== TESTE GRAFO 1: TOTAL DE ARESTAS ===\n";
+  MatrizDeIncidencia<char> matInc("./dados_trabalho_01/GRAFO_1.txt");
   cout << "[Matriz de Incidencia] Total de Arestas: "
        << matInc.obterTotalDeArestas() << endl;
 
-  MatrizDeAdjacencia<char> matAdj("grafo_teste8.txt");
+  MatrizDeAdjacencia<char> matAdj("./dados_trabalho_01/GRAFO_1.txt");
   cout << "[Matriz de Adjacencia] Total de Arestas: "
        << matAdj.obterTotalDeArestas() << endl;
 
-  ListaDeAdjacencia<char> listAdj("grafo_teste8.txt");
+  ListaDeAdjacencia<char> listAdj("./dados_trabalho_01/GRAFO_1.txt");
   cout << "[Lista de Adjacencia]  Total de Arestas: "
        << listAdj.obterTotalDeArestas() << endl;
 
+  cout << "=== TESTE GRAFO 1: TOTAL DE ARESTAS ===\n";
+  MatrizDeIncidencia<char> matInc2("./dados_trabalho_01/GRAFO_2.txt");
+  cout << "[Matriz de Incidencia] Total de Arestas: "
+       << matInc2.obterTotalDeArestas() << endl;
+
+  MatrizDeAdjacencia<char> matAdj2("./dados_trabalho_01/GRAFO_2.txt");
+  cout << "[Matriz de Adjacencia] Total de Arestas: "
+       << matAdj2.obterTotalDeArestas() << endl;
+
+  ListaDeAdjacencia<char> listAdj2("./dados_trabalho_01/GRAFO_2.txt");
+  cout << "[Lista de Adjacencia]  Total de Arestas: "
+       << listAdj2.obterTotalDeArestas() << endl;
+  
   return 0;
 }

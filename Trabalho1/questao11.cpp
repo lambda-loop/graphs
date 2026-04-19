@@ -6,51 +6,31 @@
 
 using namespace std;
 
-void criarGrafosDeTeste() {
-  // Grafo 1: Tudo conectado
-  ofstream arq1("grafo_conexo.txt");
-  arq1 << "4\n";
-  arq1 << "A , B\n";
-  arq1 << "B , C\n";
-  arq1 << "C , D\n";
-  arq1.close();
-
-  // Grafo 2: Dividido em duas partes (A-B) e (C-D)
-  ofstream arq2("grafo_desconexo.txt");
-  arq2 << "4\n";
-  arq2 << "A , B\n";
-  arq2 << "C , D\n";
-  arq2.close();
-}
-
 int main() {
-  criarGrafosDeTeste();
 
-  cout << "=== TESTE QUESTAO 11: GRAFO CONEXO ===\n\n";
-
-  cout << "--- TESTANDO GRAFO CONEXO ---\n";
-  MatrizDeIncidencia<char> mi1("grafo_conexo.txt");
-  MatrizDeAdjacencia<char> ma1("grafo_conexo.txt");
-  ListaDeAdjacencia<char> la1("grafo_conexo.txt");
+  cout << "=== TESTE GRAFO1 ===\n\n";
+  MatrizDeIncidencia<char> mi1("./dados_trabalho_01/GRAFO_1.txt");
+  MatrizDeAdjacencia<char> ma1("./dados_trabalho_01/GRAFO_1.txt");
+  ListaDeAdjacencia<char> la1("./dados_trabalho_01/GRAFO_1.txt");
 
   cout << "[Matriz Incidencia] Eh conexo? "
-       << (mi1.verificarSeConexo() ? "Sim" : "Nao") << " (Esperado: Sim)\n";
+       << (mi1.verificarSeConexo() ? "Sim" : "Nao") << "\n";
   cout << "[Matriz Adjacencia] Eh conexo? "
-       << (ma1.verificarSeConexo() ? "Sim" : "Nao") << " (Esperado: Sim)\n";
+       << (ma1.verificarSeConexo() ? "Sim" : "Nao") << "\n";
   cout << "[Lista Adjacencia]  Eh conexo? "
-       << (la1.verificarSeConexo() ? "Sim" : "Nao") << " (Esperado: Sim)\n\n";
+       << (la1.verificarSeConexo() ? "Sim" : "Nao") << "\n\n";
 
-  cout << "--- TESTANDO GRAFO DESCONEXO ---\n";
-  MatrizDeIncidencia<char> mi2("grafo_desconexo.txt");
-  MatrizDeAdjacencia<char> ma2("grafo_desconexo.txt");
-  ListaDeAdjacencia<char> la2("grafo_desconexo.txt");
+  cout << "--- TESTE GRAFO 2 ---\n";
+  MatrizDeIncidencia<char> mi2("./dados_trabalho_01/GRAFO_2.txt");
+  MatrizDeAdjacencia<char> ma2("./dados_trabalho_01/GRAFO_2.txt");
+  ListaDeAdjacencia<char> la2("./dados_trabalho_01/GRAFO_2.txt");
 
   cout << "[Matriz Incidencia] Eh conexo? "
-       << (mi2.verificarSeConexo() ? "Sim" : "Nao") << " (Esperado: Nao)\n";
+       << (mi2.verificarSeConexo() ? "Sim" : "Nao") << "\n";
   cout << "[Matriz Adjacencia] Eh conexo? "
-       << (ma2.verificarSeConexo() ? "Sim" : "Nao") << " (Esperado: Nao)\n";
+       << (ma2.verificarSeConexo() ? "Sim" : "Nao") << "\n";
   cout << "[Lista Adjacencia]  Eh conexo? "
-       << (la2.verificarSeConexo() ? "Sim" : "Nao") << " (Esperado: Nao)\n";
+       << (la2.verificarSeConexo() ? "Sim" : "Nao") << "\n";
 
   return 0;
 }
