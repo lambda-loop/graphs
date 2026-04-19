@@ -10,4 +10,4 @@ JOSÉ IVO SCHWADE ARAÚJO: Resolução e implementação das questões 9, 10 e 1
 
 ALEXANDRE RIBEIRO NUNES FILHO: Resolução e implementação das questões 14, 15 e 16
 
-JÕAO LUCAS: Resolução e implementação das questões 17 e 20
+JOÃO LUCAS DE MORAES PEREIRA: Resolução e implementação das questões 17 e 20
