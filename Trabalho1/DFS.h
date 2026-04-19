@@ -49,10 +49,11 @@ public:
 
     // muito importante pra não bugar..
     iters[VAL] = g.adjacentes[VAL].begin();
+    PES[VAL] = 0;
 
     std::map<int, int> PES;
     std::map<int, int> PSS;
-    int PE_counter = 0;
+    int PE_counter = 1;
     int PS_counter = 0;
     
     // A estrutura intermediária
@@ -147,10 +148,7 @@ public:
         PS_counter++;
       }
     }
+    this->PES = PES;
+    this->PSS = PSS;
   };
-
-
-
-
-
 };
