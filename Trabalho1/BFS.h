@@ -33,6 +33,6 @@ public:
     for (size_t i = 0; i < caminho.size(); i++) {
       std::cout << caminho[i] << ", ";
     }
-    std::cout << endl;
+    std::cout << std::endl;
   }
 };

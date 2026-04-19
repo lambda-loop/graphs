@@ -4,6 +4,7 @@
 #include <fstream>
 #include <iostream>
 #include <map>
+#include <queue>
 #include <sstream>
 #include <string>
 #include <utility>
@@ -123,5 +124,66 @@ template <typename T> struct MatrizDeAdjacencia {
       }
       cout << endl;
     }
+  }
+
+  /*
+   (7) Função que determina o número total de vértices do grafo.
+   A quantidade de vértices já é controlada pela variável numVertices.
+   Complexidade de tempo: O(1).
+   */
+  int obterTotalDeVertices() const { return numVertices; }
+
+  /*
+   (8) Função que determina o número total de arestas do grafo.
+   Na Matriz de Adjacência de um grafo não direcionado, a matriz é
+   simétrica.
+   Para evitar contar a mesma aresta duas vezes (ida e volta), iteramos
+   apenas
+   pela metade superior da matriz (j >= i).
+   Complexidade de tempo: O(V^2).
+   */
+  int obterTotalDeArestas() const {
+    int totalArestas = 0;
+    for (int i = 0; i < numVertices; ++i) {
+      for (int j = i; j < numVertices;
+           ++j) { // Começa de 'i' para pegar diagonal e triângulo superior
+        if (matriz[i][j] != 0) {
+          totalArestas++;
+        }
+      }
+    }
+    return totalArestas;
+  }
+
+  /*
+   (11) Função que determina se um grafo não direcionado é conexo.
+   Utiliza Busca em Largura (BFS). Em uma matriz de adjacência, procuramos
+   os vizinhos diretos (onde matriz[u][v] != 0) na linha do vértice atual.
+   Complexidade de tempo: O(V^2).
+   */
+  bool verificarSeConexo() {
+    if (numVertices <= 1)
+      return true;
+
+    vector<bool> visitados(numVertices, false);
+    queue<int> fila;
+    fila.push(0);
+    visitados[0] = true;
+    int qtdVisitados = 1;
+
+    while (!fila.empty()) {
+      int u = fila.front();
+      fila.pop();
+
+      for (int v = 0; v < numVertices; ++v) {
+        if (matriz[u][v] != 0 && !visitados[v]) {
+          visitados[v] = true;
+          fila.push(v);
+          qtdVisitados++;
+        }
+      }
+    }
+
+    return (qtdVisitados == numVertices);
   }
 };
