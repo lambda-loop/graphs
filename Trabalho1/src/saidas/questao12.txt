@@ -1,0 +1,2 @@
+grafo 1 eh bipartido: false
+grafo 2 eh bipartido: false

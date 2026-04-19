@@ -1,0 +1,31 @@
+
+>>> Lendo arquivo: ./dados_trabalho_01/GRAFO_1.txt <<<
+
+=== GRAUS DOS VERTICES ===
+Vértice a -> Grau: 1
+Vértice b -> Grau: 5
+Vértice c -> Grau: 4
+Vértice d -> Grau: 3
+Vértice e -> Grau: 2
+Vértice f -> Grau: 1
+Vértice i -> Grau: 1
+Vértice h -> Grau: 1
+
+------------------------------------------
+
+>>> Lendo arquivo: ./dados_trabalho_01/GRAFO_2.txt <<<
+
+=== GRAUS DOS VERTICES ===
+Vértice 1 -> Grau: 3
+Vértice 2 -> Grau: 4
+Vértice 3 -> Grau: 3
+Vértice 5 -> Grau: 2
+Vértice 6 -> Grau: 3
+Vértice 4 -> Grau: 2
+Vértice 7 -> Grau: 1
+Vértice 8 -> Grau: 3
+Vértice 9 -> Grau: 2
+Vértice 10 -> Grau: 2
+Vértice 11 -> Grau: 1
+
+------------------------------------------

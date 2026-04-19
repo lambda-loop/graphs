@@ -1,0 +1,8 @@
+=== TESTE GRAFO 1: TOTAL DE ARESTAS ===
+[Matriz de Incidencia] Total de Arestas: 9
+[Matriz de Adjacencia] Total de Arestas: 9
+[Lista de Adjacencia]  Total de Arestas: 9
+=== TESTE GRAFO 1: TOTAL DE ARESTAS ===
+[Matriz de Incidencia] Total de Arestas: 14
+[Matriz de Adjacencia] Total de Arestas: 13
+[Lista de Adjacencia]  Total de Arestas: 14

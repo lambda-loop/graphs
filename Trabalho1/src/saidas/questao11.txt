@@ -1,0 +1,10 @@
+=== TESTE GRAFO1 ===
+
+[Matriz Incidencia] Eh conexo? Sim
+[Matriz Adjacencia] Eh conexo? Sim
+[Lista Adjacencia]  Eh conexo? Sim
+
+--- TESTE GRAFO 2 ---
+[Matriz Incidencia] Eh conexo? Nao
+[Matriz Adjacencia] Eh conexo? Nao
+[Lista Adjacencia]  Eh conexo? Nao

@@ -1,0 +1,32 @@
+--- DFS GRAFO 1 ---
+Legenda: [0=a] [1=b] [2=c] [3=d] [4=e] [5=f] [6=i] [7=h] 
+Iniciando busca em: a
+Visiting: 0
+Visiting: 1
+Visiting: 2
+Visiting: 3
+Visiting: 7
+Visiting: 4
+Visiting: 6
+Visiting: 5
+
+--- DFS GRAFO 3 ---
+Legenda: [0=a] [1=b] [2=c] [3=e] [4=f] [5=d] [6=g] [7=q] [8=j] [9=h] [10=i] [11=l] [12=m] [13=k] [14=o] [15=n] [16=p] 
+Iniciando busca em: a
+Visiting: 0
+Visiting: 1
+Visiting: 2
+Visiting: 5
+Visiting: 4
+Visiting: 3
+Visiting: 6
+Visiting: 8
+Visiting: 10
+Visiting: 9
+Visiting: 11
+Visiting: 12
+Visiting: 14
+Visiting: 15
+Visiting: 7
+Visiting: 16
+Visiting: 13

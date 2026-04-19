@@ -1,0 +1,8 @@
+=== TESTE GRAFO 1: TOTAL DE VERTICES ===
+[Matriz de Incidencia] Total de Vertices: 8
+[Matriz de Adjacencia] Total de Vertices: 8
+[Lista de Adjacencia]  Total de Vertices: 8
+=== TESTE GRAFO 2: TOTAL DE VERTICES ===
+[Matriz de Incidencia] Total de Vertices: 11
+[Matriz de Adjacencia] Total de Vertices: 11
+[Lista de Adjacencia]  Total de Vertices: 11

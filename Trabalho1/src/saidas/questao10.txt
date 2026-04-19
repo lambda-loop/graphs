@@ -1,0 +1,39 @@
+---------------- carregando GRAFO_1 para as estruturas de dados ----------------
+Removendo vértice 'e' na Lista de Adjacência:
+Antes:
+a: b 
+b: a c d e f 
+c: b d e i 
+d: b c h 
+e: b c 
+f: b 
+h: d 
+i: c 
+Depois:
+a: b 
+b: a c d f 
+c: b d i 
+d: b c h 
+f: b 
+h: d 
+i: c 
+Removendo vértice 'e' na Matriz de Adjacência:
+Antes:
+  a b c d e f i h 
+a 0 1 0 0 0 0 0 0 
+b 1 0 1 1 1 1 0 0 
+c 0 1 0 1 1 0 1 0 
+d 0 1 1 0 0 0 0 1 
+e 0 1 1 0 0 0 0 0 
+f 0 1 0 0 0 0 0 0 
+i 0 0 1 0 0 0 0 0 
+h 0 0 0 1 0 0 0 0 
+Depois:
+  a b c d f i h 
+a 0 1 0 0 0 0 0 
+b 1 0 1 1 1 0 0 
+c 0 1 0 1 0 1 0 
+d 0 1 1 0 0 0 1 
+f 0 1 0 0 0 0 0 
+i 0 0 1 0 0 0 0 
+h 0 0 0 1 0 0 0 

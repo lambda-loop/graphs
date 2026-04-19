@@ -1,0 +1,586 @@
+=======================================
+RODANDO DFS NO MAPA 2 (NUMEROS)
+=======================================
+nó atual: 1
+Tem nó pra visitar?
+Tem
+Ja foi visitado
+Empilha o 2
+Marca o 2 como visitado
+nó atual: 2
+Tem nó pra visitar?
+Tem
+Ja foi visitado
+Empilha o 3
+Marca o 3 como visitado
+nó atual: 3
+Tem nó pra visitar?
+Tem
+Ja foi visitado
+Eh aresta de retorno
+nó atual: 3
+Tem nó pra visitar?
+Tem
+Ja foi visitado
+Empilha o 4
+Marca o 4 como visitado
+nó atual: 4
+Tem nó pra visitar?
+Tem
+Ja foi visitado
+Empilha o 5
+Marca o 5 como visitado
+nó atual: 5
+Tem nó pra visitar?
+Tem
+Ja foi visitado
+Empilha o 6
+Marca o 6 como visitado
+nó atual: 6
+Tem nó pra visitar?
+Tem
+Ja foi visitado
+Empilha o 7
+Marca o 7 como visitado
+nó atual: 7
+Tem nó pra visitar?
+Tem
+Ja foi visitado
+Eh aresta de retorno
+nó atual: 7
+Tem nó pra visitar?
+Tem
+Ja foi visitado
+Empilha o 9
+Marca o 9 como visitado
+nó atual: 9
+Tem nó pra visitar?
+Tem
+Ja foi visitado
+Empilha o 8
+Marca o 8 como visitado
+nó atual: 8
+Tem nó pra visitar?
+Tem
+Ja foi visitado
+Eh aresta de retorno
+nó atual: 8
+Tem nó pra visitar?
+Tem
+Ja foi visitado
+Empilha o 10
+Marca o 10 como visitado
+nó atual: 10
+Tem nó pra visitar?
+Tem
+Ja foi visitado
+Empilha o 12
+Marca o 12 como visitado
+nó atual: 12
+Tem nó pra visitar?
+Tem
+Ja foi visitado
+Empilha o 13
+Marca o 13 como visitado
+nó atual: 13
+Tem nó pra visitar?
+Tem
+Ja foi visitado
+Eh aresta de retorno
+nó atual: 13
+Tem nó pra visitar?
+Tem não.
+Desempilha 13
+PS de 13: 0
+nó atual: 12
+Tem nó pra visitar?
+Tem não.
+Desempilha 12
+PS de 12: 1
+nó atual: 10
+Tem nó pra visitar?
+Tem não.
+Desempilha 10
+PS de 10: 2
+nó atual: 8
+Tem nó pra visitar?
+Tem não.
+Desempilha 8
+PS de 8: 3
+nó atual: 9
+Tem nó pra visitar?
+Tem não.
+Desempilha 9
+PS de 9: 4
+nó atual: 7
+Tem nó pra visitar?
+Tem não.
+Desempilha 7
+PS de 7: 5
+nó atual: 6
+Tem nó pra visitar?
+Tem não.
+Desempilha 6
+PS de 6: 6
+nó atual: 5
+Tem nó pra visitar?
+Tem
+Ja foi visitado
+Eh aresta de avanco
+nó atual: 5
+Tem nó pra visitar?
+Tem não.
+Desempilha 5
+PS de 5: 7
+nó atual: 4
+Tem nó pra visitar?
+Tem não.
+Desempilha 4
+PS de 4: 8
+nó atual: 3
+Tem nó pra visitar?
+Tem não.
+Desempilha 3
+PS de 3: 9
+nó atual: 2
+Tem nó pra visitar?
+Tem não.
+Desempilha 2
+PS de 2: 10
+nó atual: 1
+Tem nó pra visitar?
+Tem não.
+Desempilha 1
+PS de 1: 11
+
+[ Vertice 1 ]
+  -> Filhos (Arvore): 2 
+  -> Retorno: 
+  -> Avanco: 
+  -> Cruzamento: 
+
+[ Vertice 2 ]
+  -> Filhos (Arvore): 3 
+  -> Retorno: 
+  -> Avanco: 
+  -> Cruzamento: 
+
+[ Vertice 3 ]
+  -> Filhos (Arvore): 4 
+  -> Retorno: 1 
+  -> Avanco: 
+  -> Cruzamento: 
+
+[ Vertice 4 ]
+  -> Filhos (Arvore): 5 
+  -> Retorno: 
+  -> Avanco: 
+  -> Cruzamento: 
+
+[ Vertice 5 ]
+  -> Filhos (Arvore): 6 
+  -> Retorno: 
+  -> Avanco: 8 
+  -> Cruzamento: 
+
+[ Vertice 6 ]
+  -> Filhos (Arvore): 7 
+  -> Retorno: 
+  -> Avanco: 
+  -> Cruzamento: 
+
+[ Vertice 7 ]
+  -> Filhos (Arvore): 9 
+  -> Retorno: 6 
+  -> Avanco: 
+  -> Cruzamento: 
+
+[ Vertice 9 ]
+  -> Filhos (Arvore): 8 
+  -> Retorno: 
+  -> Avanco: 
+  -> Cruzamento: 
+
+[ Vertice 8 ]
+  -> Filhos (Arvore): 10 
+  -> Retorno: 4 
+  -> Avanco: 
+  -> Cruzamento: 
+
+[ Vertice 10 ]
+  -> Filhos (Arvore): 12 
+  -> Retorno: 
+  -> Avanco: 
+  -> Cruzamento: 
+
+[ Vertice 12 ]
+  -> Filhos (Arvore): 13 
+  -> Retorno: 
+  -> Avanco: 
+  -> Cruzamento: 
+
+[ Vertice 13 ]
+  -> Filhos (Arvore): 
+  -> Retorno: 12 
+  -> Avanco: 
+  -> Cruzamento: 
+
+>>> Tempos de Entrada (PES) e Saida (PSS) <<<
+Vertice 2 | Entrada: 1 | Saida: 10
+Vertice 3 | Entrada: 2 | Saida: 9
+Vertice 4 | Entrada: 3 | Saida: 8
+Vertice 5 | Entrada: 4 | Saida: 7
+Vertice 6 | Entrada: 5 | Saida: 6
+Vertice 7 | Entrada: 6 | Saida: 5
+Vertice 8 | Entrada: 8 | Saida: 3
+Vertice 9 | Entrada: 7 | Saida: 4
+Vertice 10 | Entrada: 9 | Saida: 2
+Vertice 12 | Entrada: 10 | Saida: 1
+Vertice 13 | Entrada: 11 | Saida: 0
+
+
+=======================================
+RODANDO DFS NO MAPA 3 (LETRAS ASCII)
+=======================================
+nó atual: 110
+Tem nó pra visitar?
+Tem
+Ja foi visitado
+Empilha o 111
+Marca o 111 como visitado
+nó atual: 111
+Tem nó pra visitar?
+Tem
+Ja foi visitado
+Empilha o 109
+Marca o 109 como visitado
+nó atual: 109
+Tem nó pra visitar?
+Tem
+Ja foi visitado
+Empilha o 104
+Marca o 104 como visitado
+nó atual: 104
+Tem nó pra visitar?
+Tem
+Ja foi visitado
+Empilha o 105
+Marca o 105 como visitado
+nó atual: 105
+Tem nó pra visitar?
+Tem
+Ja foi visitado
+Empilha o 106
+Marca o 106 como visitado
+nó atual: 106
+Tem nó pra visitar?
+Tem
+Ja foi visitado
+Empilha o 103
+Marca o 103 como visitado
+nó atual: 103
+Tem nó pra visitar?
+Tem
+Ja foi visitado
+Empilha o 100
+Marca o 100 como visitado
+nó atual: 100
+Tem nó pra visitar?
+Tem
+Ja foi visitado
+Empilha o 99
+Marca o 99 como visitado
+nó atual: 99
+Tem nó pra visitar?
+Tem
+Ja foi visitado
+Empilha o 97
+Marca o 97 como visitado
+nó atual: 97
+Tem nó pra visitar?
+Tem
+Ja foi visitado
+Empilha o 98
+Marca o 98 como visitado
+nó atual: 98
+Tem nó pra visitar?
+Tem
+Ja foi visitado
+Eh aresta de retorno
+nó atual: 98
+Tem nó pra visitar?
+Tem não.
+Desempilha 98
+PS de 98: 0
+nó atual: 97
+Tem nó pra visitar?
+Tem
+Ja foi visitado
+Empilha o 101
+Marca o 101 como visitado
+nó atual: 101
+Tem nó pra visitar?
+Tem não.
+Desempilha 101
+PS de 101: 1
+nó atual: 97
+Tem nó pra visitar?
+Tem
+Ja foi visitado
+Empilha o 102
+Marca o 102 como visitado
+nó atual: 102
+Tem nó pra visitar?
+Tem
+Ja foi visitado
+Eh aresta de cruzamento
+nó atual: 102
+Tem nó pra visitar?
+Tem
+Ja foi visitado
+Eh aresta de retorno
+nó atual: 102
+Tem nó pra visitar?
+Tem não.
+Desempilha 102
+PS de 102: 2
+nó atual: 97
+Tem nó pra visitar?
+Tem não.
+Desempilha 97
+PS de 97: 3
+nó atual: 99
+Tem nó pra visitar?
+Tem não.
+Desempilha 99
+PS de 99: 4
+nó atual: 100
+Tem nó pra visitar?
+Tem não.
+Desempilha 100
+PS de 100: 5
+nó atual: 103
+Tem nó pra visitar?
+Tem não.
+Desempilha 103
+PS de 103: 6
+nó atual: 106
+Tem nó pra visitar?
+Tem
+Ja foi visitado
+Empilha o 107
+Marca o 107 como visitado
+nó atual: 107
+Tem nó pra visitar?
+Tem
+Ja foi visitado
+Eh aresta de retorno
+nó atual: 107
+Tem nó pra visitar?
+Tem não.
+Desempilha 107
+PS de 107: 7
+nó atual: 106
+Tem nó pra visitar?
+Tem não.
+Desempilha 106
+PS de 106: 8
+nó atual: 105
+Tem nó pra visitar?
+Tem não.
+Desempilha 105
+PS de 105: 9
+nó atual: 104
+Tem nó pra visitar?
+Tem
+Ja foi visitado
+Empilha o 108
+Marca o 108 como visitado
+nó atual: 108
+Tem nó pra visitar?
+Tem
+Ja foi visitado
+Eh aresta de cruzamento
+nó atual: 108
+Tem nó pra visitar?
+Tem
+Ja foi visitado
+Eh aresta de retorno
+nó atual: 108
+Tem nó pra visitar?
+Tem não.
+Desempilha 108
+PS de 108: 10
+nó atual: 104
+Tem nó pra visitar?
+Tem não.
+Desempilha 104
+PS de 104: 11
+nó atual: 109
+Tem nó pra visitar?
+Tem não.
+Desempilha 109
+PS de 109: 12
+nó atual: 111
+Tem nó pra visitar?
+Tem não.
+Desempilha 111
+PS de 111: 13
+nó atual: 110
+Tem nó pra visitar?
+Tem
+Ja foi visitado
+Empilha o 112
+Marca o 112 como visitado
+nó atual: 112
+Tem nó pra visitar?
+Tem
+Ja foi visitado
+Empilha o 113
+Marca o 113 como visitado
+nó atual: 113
+Tem nó pra visitar?
+Tem
+Ja foi visitado
+Eh aresta de retorno
+nó atual: 113
+Tem nó pra visitar?
+Tem não.
+Desempilha 113
+PS de 113: 14
+nó atual: 112
+Tem nó pra visitar?
+Tem não.
+Desempilha 112
+PS de 112: 15
+nó atual: 110
+Tem nó pra visitar?
+Tem
+Ja foi visitado
+Eh aresta de avanco
+nó atual: 110
+Tem nó pra visitar?
+Tem não.
+Desempilha 110
+PS de 110: 16
+
+[ Vertice 'n' ]
+  -> Filhos (Arvore): o p 
+  -> Retorno: 
+  -> Avanco: q 
+  -> Cruzamento: 
+
+[ Vertice 'o' ]
+  -> Filhos (Arvore): m 
+  -> Retorno: 
+  -> Avanco: 
+  -> Cruzamento: 
+
+[ Vertice 'm' ]
+  -> Filhos (Arvore): h 
+  -> Retorno: 
+  -> Avanco: 
+  -> Cruzamento: 
+
+[ Vertice 'h' ]
+  -> Filhos (Arvore): i l 
+  -> Retorno: 
+  -> Avanco: 
+  -> Cruzamento: 
+
+[ Vertice 'i' ]
+  -> Filhos (Arvore): j 
+  -> Retorno: 
+  -> Avanco: 
+  -> Cruzamento: 
+
+[ Vertice 'j' ]
+  -> Filhos (Arvore): g k 
+  -> Retorno: 
+  -> Avanco: 
+  -> Cruzamento: 
+
+[ Vertice 'g' ]
+  -> Filhos (Arvore): d 
+  -> Retorno: 
+  -> Avanco: 
+  -> Cruzamento: 
+
+[ Vertice 'd' ]
+  -> Filhos (Arvore): c 
+  -> Retorno: 
+  -> Avanco: 
+  -> Cruzamento: 
+
+[ Vertice 'c' ]
+  -> Filhos (Arvore): a 
+  -> Retorno: 
+  -> Avanco: 
+  -> Cruzamento: 
+
+[ Vertice 'a' ]
+  -> Filhos (Arvore): b e f 
+  -> Retorno: 
+  -> Avanco: 
+  -> Cruzamento: 
+
+[ Vertice 'b' ]
+  -> Filhos (Arvore): 
+  -> Retorno: c 
+  -> Avanco: 
+  -> Cruzamento: 
+
+[ Vertice 'e' ]
+  -> Filhos (Arvore): 
+  -> Retorno: 
+  -> Avanco: 
+  -> Cruzamento: 
+
+[ Vertice 'f' ]
+  -> Filhos (Arvore): 
+  -> Retorno: g 
+  -> Avanco: 
+  -> Cruzamento: e 
+
+[ Vertice 'k' ]
+  -> Filhos (Arvore): 
+  -> Retorno: i 
+  -> Avanco: 
+  -> Cruzamento: 
+
+[ Vertice 'l' ]
+  -> Filhos (Arvore): 
+  -> Retorno: m 
+  -> Avanco: 
+  -> Cruzamento: k 
+
+[ Vertice 'p' ]
+  -> Filhos (Arvore): q 
+  -> Retorno: 
+  -> Avanco: 
+  -> Cruzamento: 
+
+[ Vertice 'q' ]
+  -> Filhos (Arvore): 
+  -> Retorno: n 
+  -> Avanco: 
+  -> Cruzamento: 
+
+>>> Tempos de Entrada (PES) e Saida (PSS) <<<
+Vertice 'a' | Entrada: 9 | Saida: 3
+Vertice 'b' | Entrada: 10 | Saida: 0
+Vertice 'c' | Entrada: 8 | Saida: 4
+Vertice 'd' | Entrada: 7 | Saida: 5
+Vertice 'e' | Entrada: 11 | Saida: 1
+Vertice 'f' | Entrada: 12 | Saida: 2
+Vertice 'g' | Entrada: 6 | Saida: 6
+Vertice 'h' | Entrada: 3 | Saida: 11
+Vertice 'i' | Entrada: 4 | Saida: 9
+Vertice 'j' | Entrada: 5 | Saida: 8
+Vertice 'k' | Entrada: 13 | Saida: 7
+Vertice 'l' | Entrada: 14 | Saida: 10
+Vertice 'm' | Entrada: 2 | Saida: 12
+Vertice 'n' | Entrada: 0 | Saida: 16
+Vertice 'o' | Entrada: 1 | Saida: 13
+Vertice 'p' | Entrada: 15 | Saida: 15
+Vertice 'q' | Entrada: 16 | Saida: 14
