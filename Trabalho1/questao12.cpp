@@ -1,6 +1,8 @@
 #include "ListaDeAdjacencia.h"
 #include <queue>
 
+using namespace std;
+
 /*
 
 Objetivo: checar se o grafo é bipartido

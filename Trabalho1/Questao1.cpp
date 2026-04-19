@@ -1,6 +1,8 @@
 // a definição do grafo como lista de adjacencia esta no .h
 #include "ListaDeAdjacencia.h"
 
+using namespace std;
+
 int main(){
 
     cout << "---------------- GRAFO1 ----------------" << endl;

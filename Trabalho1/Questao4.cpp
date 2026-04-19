@@ -1,6 +1,8 @@
 #include "ListaDeAdjacencia.h"
 #include "MatrizDeAdjacencia.h"
 
+using namespace std;
+
 struct Conversoes{
     template <typename T>
     static MatrizDeAdjacencia<T> listaParaMatriz(ListaDeAdjacencia<T>& listaAdj){

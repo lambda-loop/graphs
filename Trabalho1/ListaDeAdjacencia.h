@@ -16,6 +16,7 @@ template <typename T> struct ListaDeAdjacencia {
         ordenarVizinhos();
     }
 
+    ListaDeAdjacencia(){}
     ListaDeAdjacencia(std::string caminhoDoGrafo) {
       std::ifstream arquivo(caminhoDoGrafo);
         T primeiro, segundo;
