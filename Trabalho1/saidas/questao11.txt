@@ -1,0 +1,11 @@
+=== TESTE QUESTAO 11: GRAFO CONEXO ===
+
+--- TESTANDO GRAFO CONEXO ---
+[Matriz Incidencia] Eh conexo? Sim (Esperado: Sim)
+[Matriz Adjacencia] Eh conexo? Sim (Esperado: Sim)
+[Lista Adjacencia]  Eh conexo? Sim (Esperado: Sim)
+
+--- TESTANDO GRAFO DESCONEXO ---
+[Matriz Incidencia] Eh conexo? Nao (Esperado: Nao)
+[Matriz Adjacencia] Eh conexo? Nao (Esperado: Nao)
+[Lista Adjacencia]  Eh conexo? Nao (Esperado: Nao)

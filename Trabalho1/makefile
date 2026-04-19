@@ -11,9 +11,9 @@ run_all:
 	@for file in $(TARGETS); do \
 		echo "--- Compilando $$file.cpp ---"; \
 		$(CXX) $(CXXFLAGS) $$file.cpp -o $$file; \
-		echo "--- Executando $$file ---"; \
-		./$$file; \
-		echo "--- Removendo $$file ---"; \
+		echo "--- Executando $$file e salvando em ./saidas/$$file.txt ---"; \
+		./$$file > ./saidas/$$file.txt 2>&1; \
+		echo "--- Removendo executável $$file ---"; \
 		rm -f $$file; \
 		echo ""; \
 	done
@@ -21,9 +21,10 @@ run_all:
 # Caso queira rodar apenas um arquivo específico (ex: make single FILE=meu_arquivo)
 single:
 	@$(CXX) $(CXXFLAGS) $(FILE).cpp -o $(FILE)
-	@./$(FILE)
+	@echo "Executando e salvando em $(FILE).txt..."
+	@./$(FILE) > $(FILE).txt 2>&1
 	@rm -f $(FILE)
 
-# Limpeza geral (caso algum binário tenha sobrado por erro)
+# Limpeza geral (remove binários e arquivos de log .txt)
 clean:
-	rm -f $(TARGETS)
+	rm -f $(TARGETS) *.txt

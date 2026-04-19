@@ -1,0 +1,30 @@
+
+>>> Lendo grafo de: ./dados_trabalho_01/GRAFO_1.txt <<<
+--- Adjacências ---
+Os vertices a e b SAO adjacentes.
+Os vertices b e c SAO adjacentes.
+Os vertices b e d SAO adjacentes.
+Os vertices b e e SAO adjacentes.
+Os vertices b e f SAO adjacentes.
+Os vertices c e d SAO adjacentes.
+Os vertices c e e SAO adjacentes.
+Os vertices c e i SAO adjacentes.
+Os vertices d e h SAO adjacentes.
+------------------------------------------
+
+>>> Lendo grafo de: ./dados_trabalho_01/GRAFO_2.txt <<<
+--- Adjacências ---
+Os vertices 1 e 2 SAO adjacentes.
+Os vertices 1 e 3 SAO adjacentes.
+Os vertices 1 e 6 SAO adjacentes.
+Os vertices 2 e 3 SAO adjacentes.
+Os vertices 2 e 5 SAO adjacentes.
+Os vertices 2 e 6 SAO adjacentes.
+Os vertices 3 e 4 SAO adjacentes.
+Os vertices 5 e 4 SAO adjacentes.
+Os vertices 6 e 7 SAO adjacentes.
+Os vertices 8 e 9 SAO adjacentes.
+Os vertices 8 e 10 SAO adjacentes.
+Os vertices 8 e 11 SAO adjacentes.
+Os vertices 9 e 10 SAO adjacentes.
+------------------------------------------

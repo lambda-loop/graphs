@@ -1,0 +1,6 @@
+=== TESTE QUESTAO 7: TOTAL DE VERTICES ===
+Grafo esperado: 4 vertices (A, B, C, D)
+
+[Matriz de Incidencia] Total de Vertices: 4
+[Matriz de Adjacencia] Total de Vertices: 4
+[Lista de Adjacencia]  Total de Vertices: 4

@@ -1,0 +1,6 @@
+=== TESTE QUESTAO 8: TOTAL DE ARESTAS ===
+Grafo esperado: 5 arestas (A-B, B-C, C-D, D-E, E-A)
+
+[Matriz de Incidencia] Total de Arestas: 5
+[Matriz de Adjacencia] Total de Arestas: 5
+[Lista de Adjacencia]  Total de Arestas: 5
