@@ -16,12 +16,10 @@ struct AdjacencyList {
   bool is_directed;
 
 
-  AdjacencyList(bool directed = false) : is_directed(directed) {
-  }
+  AdjacencyList(bool directed = false) : is_directed(directed) { }
 
   AdjacencyList(std::map<int, std::set<T>> initial_data, bool directed = false) 
-        : data(std::move(initial_data)), is_directed(directed) {
-  }
+        : data(std::move(initial_data)), is_directed(directed) { }
 
   void safeAddVertex(int node) {
     // only if the vertice doesnt exist yet, it creates
@@ -39,15 +37,6 @@ struct AdjacencyList {
     data[from].insert(to);
     if (!is_directed) data[to].insert(from);
   }
-
-  // WARNING: NOT WORKING. Maybe impolement latter
-  // void removeVertex(int node){
-  //   // Remove vertex and all associated edges
-  //   data.erase(node);
-  //   for (auto& [key, neighbors] : data) {
-  //     neighbors.erase(remove(neighbors.begin(), neighbors.end(), node), neighbors.end());
-  //   }
-  // }
 
   void printGraph() {
     for (const auto& [node, neighbors] : data) {
