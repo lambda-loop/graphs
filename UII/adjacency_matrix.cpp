@@ -10,8 +10,10 @@
 // using namespace std;
 
 
-// ADVICE: use snake_case_much_much_please :P
-// please no 😡
+// ADVICE: use snake_case_ for variables much_much_please :P
+//         use camelCase   for functions 
+
+// please no classes 😡
 template <typename T>
 struct AdjacencyList /* : public Graph */ {
 // private: 
@@ -20,51 +22,52 @@ struct AdjacencyList /* : public Graph */ {
 
 // public: 
 
-  AdjacencyList(bool directed = false) : isDirected(directed) {
+  AdjacencyList(bool directed = false) : is_directed(directed) {
   }
 
   AdjacencyList(std::map<int, std::set<T>> initial_data, bool directed = false) 
         : data(std::move(initial_data)), is_directed(directed) {
   }
 
-  void addVertex(int node) {
-    // Ensure non-duplicate vertices
-    // int node will be vertex's label
-    if (adj.find(node) == adj.end()) {
-      adj[node] = vector<int>();
+  void safeAddVertex(int node) {
+    // only if the vertice doesnt exist yet, it creates
+    // it with a empty set
+    if (data.find(node) == data.end()) {
+      data[node] = std::set<int>();
     }
   }
 
   void addEdge(int from, int to) {
     // Ensure vertices exist before adding edges
-    addVertex(from);
-    addVertex(to);
-    adj[from].push_back(to);
-    if (!isDirected) {
-      adj[to].push_back(from);
-    }
+    safeAddVertex(from);
+    safeAddVertex(to);
+
+    data[from].insert(to);
+    if (!is_directed) data[to].insert(from);
   }
 
-  void removeVertex(int node){
-    // Remove vertex and all associated edges
-    adj.erase(node);
-    for (auto& [key, neighbors] : adj) {
-      neighbors.erase(remove(neighbors.begin(), neighbors.end(), node), neighbors.end());
-    }
-  }
+  // WARNING: NOT WORKING. Maybe impolement latter
+  // void removeVertex(int node){
+  //   // Remove vertex and all associated edges
+  //   data.erase(node);
+  //   for (auto& [key, neighbors] : data) {
+  //     neighbors.erase(remove(neighbors.begin(), neighbors.end(), node), neighbors.end());
+  //   }
+  // }
 
   void printGraph() {
     for (const auto& [node, neighbors] : adj) {
-      cout << node << ": ";
+      std::cout << node << ": ";
       for (int neighbor : neighbors) {
-        cout << neighbor << " ";
+        std::cout << neighbor << " ";
       }
-      cout << endl;
+      std::cout << std::endl;
     }
   }
 
-  vector<int> getNeighbors(int node){
-    return adj[node];
+  // trash we dont care about encapsulation here!
+  std::vector<T> getNeighbors(T node){
+    return data[node];
   }
 
 };
