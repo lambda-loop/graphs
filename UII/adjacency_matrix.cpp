@@ -1,53 +1,56 @@
+#pragma once 
 
-#include <set>
-#include <vector>
 #include <iostream>
 #include <map>
-#include <algorithm>
-
-
+#include <set>
+#include <utility>
+#include <concepts>
 
 // ADVICE: use snake_case_ for variables much_much_please :P
 //         use camelCase   for functions 
+namespace graph {
 
-template <typename T>
+template <typename T, typename W>
+requires std::totally_ordered<T> && std::totally_ordered<W>
 struct AdjacencyList {
-  std::map<T, std::set<T>> data;
+  std::map<T, std::set<std::pair<T, W>>> data;
   bool is_directed;
-
 
   AdjacencyList(bool directed = false) : is_directed(directed) { }
 
-  AdjacencyList(std::map<int, std::set<T>> initial_data, bool directed = false) 
-        : data(std::move(initial_data)), is_directed(directed) { }
+  AdjacencyList(std::map<T, std::set<std::pair<T, W>>> initial_data, bool directed = false) 
+  : data(std::move(initial_data)), is_directed(directed) { }
 
-  void safeAddVertex(int node) {
+  void safeAddVertex(T node) {
     // only if the vertice doesnt exist yet, it creates
     // it with an empty set
     if (data.find(node) == data.end()) {
-      data[node] = std::set<int>();
+      data[node] = std::set<std::pair<T, W>>();
     }
   }
 
-  void addEdge(int from, int to) {
-    // Ensure vertices exist before adding edges
-    safeAddVertex(from);
-    safeAddVertex(to);
+  void addEdge(T from, T to, W weight) {
+    data.try_emplace(from);
+    data.try_emplace(to);
 
-    data[from].insert(to);
-    if (!is_directed) data[to].insert(from);
+    data[from].emplace(to, weight);
+    if (!is_directed) {
+      data[to].emplace(from, weight);
+    }
   }
 
-  void printGraph() {
+  void printGraph() const {
     for (const auto& [node, neighbors] : data) {
       std::cout << node << ": ";
-      for (int neighbor : neighbors) {
-        std::cout << neighbor << " ";
+      for (const auto& [neighbor, weight] : neighbors) {
+        std::cout << "(" << neighbor << ", " << weight << ") ";
       }
-      std::cout << std::endl;
+      std::cout << '\n';
     }
   }
+};
 
 };
+
 
 
