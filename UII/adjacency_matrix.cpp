@@ -4,23 +4,17 @@
 #include <iostream>
 #include <map>
 #include <algorithm>
-// #include "graph.h"
 
-// THATS TRASH!!!
-// using namespace std;
 
 
 // ADVICE: use snake_case_ for variables much_much_please :P
 //         use camelCase   for functions 
 
-// please no classes 😡
 template <typename T>
-struct AdjacencyList /* : public Graph */ {
-// private: 
+struct AdjacencyList {
   std::map<T, std::set<T>> data;
   bool is_directed;
 
-// public: 
 
   AdjacencyList(bool directed = false) : is_directed(directed) {
   }
@@ -31,7 +25,7 @@ struct AdjacencyList /* : public Graph */ {
 
   void safeAddVertex(int node) {
     // only if the vertice doesnt exist yet, it creates
-    // it with a empty set
+    // it with an empty set
     if (data.find(node) == data.end()) {
       data[node] = std::set<int>();
     }
@@ -56,18 +50,13 @@ struct AdjacencyList /* : public Graph */ {
   // }
 
   void printGraph() {
-    for (const auto& [node, neighbors] : adj) {
+    for (const auto& [node, neighbors] : data) {
       std::cout << node << ": ";
       for (int neighbor : neighbors) {
         std::cout << neighbor << " ";
       }
       std::cout << std::endl;
     }
-  }
-
-  // trash we dont care about encapsulation here!
-  std::vector<T> getNeighbors(T node){
-    return data[node];
   }
 
 };
