@@ -12,13 +12,13 @@ namespace graph {
 
 template <typename T, typename W>
 requires std::totally_ordered<T> && std::totally_ordered<W>
-struct AdjacencyList {
+struct Graph {
   std::map<T, std::set<std::pair<T, W>>> data;
   bool is_directed;
 
-  AdjacencyList(bool directed = false) : is_directed(directed) { }
+  Graph(bool directed = false) : is_directed(directed) { }
 
-  AdjacencyList(std::map<T, std::set<std::pair<T, W>>> initial_data, bool directed = false) 
+  Graph(std::map<T, std::set<std::pair<T, W>>> initial_data, bool directed = false) 
   : data(std::move(initial_data)), is_directed(directed) { }
 
   void safeAddVertex(T node) {
