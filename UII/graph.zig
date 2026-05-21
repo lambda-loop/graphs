@@ -57,17 +57,21 @@ pub const Graph = struct {
         // The N's just the !Z
 
         const NUM_KEYS = self.data.count();
-        while (Z < NUM_KEYS) {
+        while (Z.count() < NUM_KEYS) {
             // const KEYS = std.AutoArrayHashMap(i32, void).init(self.allocator);
             const MIN_VERTICE = find_min: {
                 var min = std.math.inf(f32);
+                var min_orange = undefined;
                 for (Z.keys()) |green| {
                     for (self.data.get(green)) |orange| {
-                        if (!Z.contains(orange.x) and orange.y < min) min = orange.y;
+                        if (!Z.contains(orange.x) and orange.y < min) { 
+                            min = orange.y; 
+                            min_orange = orange;
+                        }
                     }
                 }
 
-                break :find_min min;
+                break :find_min min_orange;
             };
 
             for (self.data.keys()) |from| {
