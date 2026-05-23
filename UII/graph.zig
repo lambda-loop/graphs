@@ -11,7 +11,9 @@ pub const Edge = struct {
     to: u32,
 };
 
+
 // only integers with floats as weight for a while..
+// should i just put things around it cause a modules just a struct? 
 pub const Graph = struct {
     data: std.AutoHashMap(u32, std.ArrayList(Edge)),
     is_directed: bool,
@@ -47,13 +49,24 @@ pub const Graph = struct {
         try res.value_ptr.append(edge);
     }
 
+    fn addNode(self: *Graph, node: u32) !void {
+        const res = try self.data.getOrPut(node);
+
+        if (!res.found_existing) {
+            res.value_ptr.* = std.ArrayList(Edge).init(self.allocator);
+        }
+    }
+
     // u pick the first vertice. Whatever..
-    pub fn prim(self: Graph, V: u32) Graph {
+    // Only for non-directed?
+    // IF THE GRAPH IS NOT CONEXE OR EMPTY, THIS WILL BE CRAZY!
+    pub fn prim(self: Graph, V: u32) !Graph {
+        var T = std.ArrayList(Edge).init(self.allocator);
+        defer T.deinit();
         var Z = std.AutoArrayHashMap(u32, void).init(self.allocator);
         defer Z.deinit();
 
-        Z.put(V, {});
-
+        try Z.put(V, {});
         // The N's just the !Z
 
         const NUM_KEYS = self.data.count();
@@ -63,9 +76,10 @@ pub const Graph = struct {
                 var min = std.math.inf(f32);
                 var min_orange: Edge = undefined;
                 for (Z.keys()) |green| { // greens are the visited vertexes
-                    for (self.data.get(green)) |orange| { // oranges are the edges
-                        if (!Z.contains(orange.to) and orange.weigth < min) { 
-                            min = orange.weigth; 
+                    const from_green_edges = self.data.get(green).?;
+                    for (from_green_edges.items) |orange| { // oranges are the edges
+                        if (!Z.contains(orange.to) and orange.weight < min) { 
+                            min = orange.weight; 
                             min_orange = orange;
                         }
                     }
@@ -74,17 +88,13 @@ pub const Graph = struct {
                 break :find_min min_orange;
             };
 
-            for (self.data.keys()) |from| {
-                if (!Z.contains(from)) continue;
+            try Z.put(MIN_VERTICE.to, {});
+            try T.append(MIN_VERTICE);
 
-
-
-
-
-
-
-                
-            }
         }
+
+        // assuming thats only for non directed graphs
+        return Graph.init(self.allocator, false, T.items);
+
     }
 };
