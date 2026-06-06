@@ -5,6 +5,8 @@
 #include <set>
 #include <utility>
 #include <concepts>
+#include <fstream>
+#include <string>
 
 // ADVICE: use snake_case_ for variables much_much_please :P
 //         use camelCase   for functions 
@@ -48,6 +50,30 @@ struct Graph {
       std::cout << '\n';
     }
   }
+
+  Graph(std::string graph_file_path, bool directed = false) : is_directed(directed){
+    std::ifstream file_stream(graph_file_path);
+
+    if (!file_stream.is_open()){
+      std::cerr << "Error: Could not open graph file: " << graph_file_path << std::endl;
+      return;
+    }
+
+    int total_vertices = 0;
+
+    if(!(file_stream >> total_vertices)){
+      return;
+    }
+
+    T from;
+    T to;
+    W weight;
+
+    while(file_stream >> from >> to >> weight){
+      addEdge(from, to, weight);
+    }
+  }
+
 };
 
 };
