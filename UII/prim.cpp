@@ -1,90 +1,98 @@
-
-#include "adjacency_matrix.h"
-
-#include <concepts>
+#include "adjacency_matrix.h" // Importando a estrutura do seu grupo
 #include <iostream>
-#include <optional>
-#include <set>
-#include <string>
-#include <tuple>
 #include <vector>
+#include <map>
+#include <set>
+#include <tuple>
+#include <string>
+#include <limits> // Necessário para simular o std::math.inf(f32) do Zig
 
-template <typename T, typename W>
-graph::Graph<T, W> prim(graph::Graph<T, W> &graph_ref, T start_vertex) {
-  graph::Graph<T, W> mst;
+graph::Graph<short, float> generatePrimMST(std::string graph_file_path) {
+    auto original_graph = graph::Graph<short, float>(graph_file_path);
+    auto result_graph = graph::Graph<short, float>();
 
-  std::vector<T> visited_order = {start_vertex};
-  std::set<T> visited_lookup = {start_vertex};
+    if (original_graph.data.empty()) {
+        return result_graph;
+    }
 
-  while (visited_lookup.size() < graph_ref.data.size()) {
-    std::optional<std::tuple<T, T, W>> best_edge;
+    // No Zig: var Z = std.AutoArrayHashMap(u32, void).init(self.allocator);
+    // Em C++, um std::set faz exatamente o papel de um HashMap cujas chaves são os nós visitados.
+    std::set<short> Z; 
 
-    for (const T &from : visited_order) {
-      const auto &neighbors = graph_ref.data.at(from);
+    // Pega o primeiro vértice disponível (equivalente ao comentário "u pick the first vertice. Whatever..")
+    short V = original_graph.data.begin()->first;
+    Z.insert(V);
 
-      for (const auto &[to, weight] : neighbors) {
-        if (visited_lookup.find(to) != visited_lookup.end()) {
-          continue;
+    int num_keys = original_graph.data.size();
+
+    // while (Z.count() < NUM_KEYS)
+    while (Z.size() < num_keys) {
+        float min_weight = std::numeric_limits<float>::infinity();
+        short min_from = -1;
+        short min_to = -1;
+        bool edge_found = false;
+
+        // for (Z.keys()) |green| -> iterando pelos nós já visitados
+        for (short green : Z) {
+            auto it = original_graph.data.find(green);
+            if (it == original_graph.data.end()) continue;
+
+            const auto& from_green_edges = it->second;
+
+            // for (from_green_edges.items) |orange| -> iterando pelas arestas do nó visitado
+            for (const auto& [orange_to, orange_weight] : from_green_edges) {
+                
+                // if (!Z.contains(orange.to) and orange.weight < min)
+                if (Z.find(orange_to) == Z.end() && orange_weight < min_weight) {
+                    min_weight = orange_weight;
+                    min_from = green;
+                    min_to = orange_to;
+                    edge_found = true;
+                }
+            }
         }
 
-        if (!best_edge.has_value() || weight < std::get<2>(*best_edge)) {
-          best_edge = std::make_tuple(from, to, weight);
+        // Se nenhuma aresta válida for encontrada, o grafo é desconexo.
+        if (!edge_found) {
+            std::cout << "Nao ha mais conexoes possiveis. Grafo desconexo!" << std::endl;
+            break; 
         }
-      }
+
+        // try Z.put(MIN_VERTICE.to, {});
+        Z.insert(min_to);
+        
+        // try T.append(MIN_VERTICE); -> Ao invés de uma lista, já inserimos no grafo final
+        result_graph.addEdge(min_from, min_to, min_weight);
+        
+        // Opcional: imprimir o progresso da mesma forma que o Boruvka
+        // std::cout << " -> Aresta adicionada (" << min_from << ", " << min_to 
+        //           << ") com peso: " << min_weight << std::endl;
     }
 
-    if (!best_edge.has_value()) {
-      break;
-    }
-
-    const auto &[from, to, weight] = *best_edge;
-    mst.addEdge(from, to, weight);
-    visited_lookup.insert(to);
-    visited_order.push_back(to);
-  }
-
-  return mst;
-}
-
-template <typename T, typename W>
-graph::Graph<T, W> generateMinimumSpanningTree(const std::string &graph_file_path) {
-  graph::Graph<T, W> original_graph(graph_file_path);
-
-  if (original_graph.data.empty()) {
-    return graph::Graph<T, W>();
-  }
-
-  return prim(original_graph, original_graph.data.begin()->first);
-}
-
-template <typename T, typename W>
-W totalWeight(const graph::Graph<T, W> &graph_ref) {
-  W total = W{};
-
-  for (const auto &[from, neighbors] : graph_ref.data) {
-    for (const auto &[to, weight] : neighbors) {
-      if (from < to) {
-        total += weight;
-      }
-    }
-  }
-
-  return total;
+    return result_graph;
 }
 
 int main() {
-  const std::string arquivo = "grafo.txt";
+    std::string arquivo = "grafo.txt";
 
-  std::cout << "------------- Grafo Original (Prim) -------------" << std::endl;
-  graph::Graph<short, float> graph(arquivo);
-  graph.printGraph();
+    std::cout << "------------- Grafo Original (Prim) -------------" << std::endl;
+    auto graph = graph::Graph<short, float>(arquivo);
+    graph.printGraph();
 
-  std::cout << "\n------------- Construindo Arvore Geradora Minima -------------" << std::endl;
-  auto mst = generateMinimumSpanningTree<short, float>(arquivo);
+    std::cout << "\n------------- Construindo Arvore Geradora Minima -------------" << std::endl;
+    auto mst = generatePrimMST(arquivo);
+    
+    std::cout << "\n------------- Resultado Final (MST) -------------" << std::endl;
+    mst.printGraph();
+    
+    // Calculando o custo total (exatamente como feito no Boruvka)
+    float custo_total = 0;
+    for (const auto& [src, vizinhos] : mst.data) {
+        for (const auto& [dest, peso] : vizinhos) {
+            if (src < dest) custo_total += peso;
+        }
+    }
+    std::cout << "Custo Total da Arvore: " << custo_total << std::endl;
 
-  std::cout << "\n------------- Resultado Final (MST) -------------" << std::endl;
-  mst.printGraph();
-  std::cout << "Custo Total da Arvore: " << totalWeight(mst) << std::endl;
-
-  return 0;
+    return 0;
 }
