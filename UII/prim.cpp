@@ -1,11 +1,11 @@
-#include "adjacency_matrix.h" // Importando a estrutura do seu grupo
+#include "adjacency_matrix.h" 
 #include <iostream>
 #include <vector>
 #include <map>
 #include <set>
 #include <tuple>
 #include <string>
-#include <limits> // Necessário para simular o std::math.inf(f32) do Zig
+#include <limits>
 
 graph::Graph<short, float> generatePrimMST(std::string graph_file_path) {
     auto original_graph = graph::Graph<short, float>(graph_file_path);
