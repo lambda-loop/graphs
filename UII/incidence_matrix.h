@@ -93,4 +93,37 @@ template <typename T> struct GrafoMatrizInc {
       std::cout << "\n";
     }
   }
+  void imprimirListaArestas() {
+    std::cout << "\n--- Relacao de Arestas ---\n";
+
+    if (matriz.empty()) {
+      std::cout << "Nenhuma aresta encontrada.\n";
+      return;
+    }
+
+    double custoTotal = 0.0;
+
+    for (size_t i = 0; i < matriz.size(); ++i) {
+      int origem = -1, destino = -1;
+      double peso = 0.0;
+
+      for (int j = 0; j < vertices; ++j) {
+        if (matriz[i][j] < 0)
+          origem = j;
+        else if (matriz[i][j] > 0) {
+          destino = j;
+          peso = matriz[i][j];
+        }
+      }
+
+      if (origem != -1 && destino != -1) {
+        std::cout << "V" << indiceParaNome[origem] << " -> V"
+                  << indiceParaNome[destino] << " \t(Custo: " << std::fixed
+                  << std::setprecision(1) << peso << ")\n";
+        custoTotal += peso;
+      }
+    }
+    std::cout << "--------------------------\n";
+    std::cout << "Custo Total da Arvore: " << custoTotal << "\n";
+  }
 };
