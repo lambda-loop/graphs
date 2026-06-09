@@ -114,6 +114,14 @@ int main(){
     std::cout << "-------------Minimum Spanning Tree-----------------" << std::endl;
     auto minimumSpanningTree = generateMinimumSpanningTree("grafo.txt");
     minimumSpanningTree.printGraph();
+
+    float custo_total = 0;
+    for (const auto& [src, vizinhos] : minimumSpanningTree.data) {
+        for (const auto& [dest, peso] : vizinhos) {
+            if (src < dest) custo_total += peso;
+        }
+    }
+    std::cout << "Custo Total da Arvore: " << custo_total << std::endl;
     return 0;
 }
 
