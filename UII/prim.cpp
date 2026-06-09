@@ -72,7 +72,6 @@ int main() {
     std::cout << "\n------------- Resultado Final (MST) -------------" << std::endl;
     mst.printGraph();
     
-    // Calculando o custo total (exatamente como feito no Boruvka)
     float custo_total = 0;
     for (const auto& [src, vizinhos] : mst.data) {
         for (const auto& [dest, peso] : vizinhos) {
