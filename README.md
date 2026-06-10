@@ -9,7 +9,7 @@
 
 <div align=center>
 
-# Ejabberd Chat
+# Grafos
 
 </div>
 
