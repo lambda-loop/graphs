@@ -58,6 +58,6 @@ Para rodar o projeto basta navegar para o diretório `graphs/UII/` e rodar o `se
 ``` bash
 cd UII/
 chmod u+x setup.sh
-./setup.sh
+source ./setup.sh
 python menu.py
 ```
