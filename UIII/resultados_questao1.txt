@@ -1,0 +1,90 @@
+=== RESUMO DOS RESULTADOS (VIZINHO MAIS PRÓXIMO DETERMINÍSTICO + BUSCA LOCAL 2-OPT) ===
+
+========================================================
+Instância Arquivo: TCC_Matriz_Separado_por_Problema - Km_P1.csv (Tamanho N = 48 Cidades)
+========================================================
+Vizinho Mais Próximo Puro (Sem Busca Local): 2291.40
+  -> MENOR VALOR ENCONTRADO (Com busca 2opt): 1973.60
+  -> TEMPO MÉDIO DE EXECUÇÃO:               4.25 ms
+  -> Rota do Circuito: 1 -> 10 -> 12 -> 9 -> 8 -> 21 -> 22 -> 48 -> 40 -> 36 -> 25 -> 31 -> 7 -> 19 -> 17 -> 38 -> 20 -> 33 -> 16 -> 34 -> 32 -> 26 -> 42 -> 35 -> 39 -> 47 -> 37 -> 13 -> 24 -> 29 -> 43 -> 14 -> 46 -> 45 -> 18 -> 15 -> 28 -> 44 -> 27 -> 6 -> 30 -> 41 -> 5 -> 11 -> 2 -> 3 -> 4 -> 23 -> 1 (Retorno)
+
+========================================================
+Instância Arquivo: TCC_Matriz_Separado_por_Problema - Km_P3.csv (Tamanho N = 36 Cidades)
+========================================================
+Vizinho Mais Próximo Puro (Sem Busca Local): 1951.50
+  -> MENOR VALOR ENCONTRADO (Com busca 2opt): 1709.20
+  -> TEMPO MÉDIO DE EXECUÇÃO:               1.16 ms
+  -> Rota do Circuito: 1 -> 2 -> 11 -> 10 -> 12 -> 9 -> 8 -> 21 -> 22 -> 36 -> 25 -> 31 -> 17 -> 7 -> 19 -> 20 -> 33 -> 16 -> 34 -> 32 -> 26 -> 35 -> 13 -> 24 -> 29 -> 14 -> 5 -> 18 -> 15 -> 28 -> 27 -> 6 -> 30 -> 4 -> 3 -> 23 -> 1 (Retorno)
+
+========================================================
+Instância Arquivo: TCC_Matriz_Separado_por_Problema - Km_P5.csv (Tamanho N = 24 Cidades)
+========================================================
+Vizinho Mais Próximo Puro (Sem Busca Local): 1379.30
+  -> MENOR VALOR ENCONTRADO (Com busca 2opt): 1321.00
+  -> TEMPO MÉDIO DE EXECUÇÃO:               0.37 ms
+  -> Rota do Circuito: 1 -> 2 -> 11 -> 10 -> 12 -> 9 -> 8 -> 21 -> 22 -> 17 -> 7 -> 19 -> 16 -> 20 -> 13 -> 24 -> 5 -> 14 -> 18 -> 15 -> 6 -> 4 -> 3 -> 23 -> 1 (Retorno)
+
+========================================================
+Instância Arquivo: TCC_Matriz_Separado_por_Problema - Km_P7.csv (Tamanho N = 12 Cidades)
+========================================================
+Vizinho Mais Próximo Puro (Sem Busca Local): 828.40
+  -> MENOR VALOR ENCONTRADO (Com busca 2opt): 673.90
+  -> TEMPO MÉDIO DE EXECUÇÃO:               0.06 ms
+  -> Rota do Circuito: 1 -> 6 -> 4 -> 3 -> 2 -> 11 -> 5 -> 7 -> 12 -> 9 -> 8 -> 10 -> 1 (Retorno)
+
+========================================================
+Instância Arquivo: TCC_Matriz_Separado_por_Problema - Km_P9.csv (Tamanho N = 7 Cidades)
+========================================================
+Vizinho Mais Próximo Puro (Sem Busca Local): 518.50
+  -> MENOR VALOR ENCONTRADO (Com busca 2opt): 438.30
+  -> TEMPO MÉDIO DE EXECUÇÃO:               0.01 ms
+  -> Rota do Circuito: 1 -> 3 -> 4 -> 2 -> 7 -> 5 -> 6 -> 1 (Retorno)
+
+========================================================
+Instância Arquivo: TCC_Matriz_Separado_por_Problema - Min_P10.csv (Tamanho N = 7 Cidades)
+========================================================
+Vizinho Mais Próximo Puro (Sem Busca Local): 413.00
+  -> MENOR VALOR ENCONTRADO (Com busca 2opt): 364.00
+  -> TEMPO MÉDIO DE EXECUÇÃO:               0.01 ms
+  -> Rota do Circuito: 1 -> 3 -> 4 -> 2 -> 7 -> 5 -> 6 -> 1 (Retorno)
+
+========================================================
+Instância Arquivo: TCC_Matriz_Separado_por_Problema - Min_P12.csv (Tamanho N = 6 Cidades)
+========================================================
+Vizinho Mais Próximo Puro (Sem Busca Local): 400.00
+  -> MENOR VALOR ENCONTRADO (Com busca 2opt): 305.00
+  -> TEMPO MÉDIO DE EXECUÇÃO:               0.01 ms
+  -> Rota do Circuito: 1 -> 5 -> 2 -> 3 -> 4 -> 6 -> 1 (Retorno)
+
+========================================================
+Instância Arquivo: TCC_Matriz_Separado_por_Problema - Min_P2.csv (Tamanho N = 48 Cidades)
+========================================================
+Vizinho Mais Próximo Puro (Sem Busca Local): 2355.00
+  -> MENOR VALOR ENCONTRADO (Com busca 2opt): 2047.00
+  -> TEMPO MÉDIO DE EXECUÇÃO:               2.60 ms
+  -> Rota do Circuito: 1 -> 23 -> 3 -> 4 -> 41 -> 30 -> 6 -> 27 -> 44 -> 28 -> 15 -> 18 -> 45 -> 46 -> 14 -> 43 -> 29 -> 24 -> 13 -> 47 -> 39 -> 35 -> 37 -> 38 -> 20 -> 33 -> 16 -> 32 -> 26 -> 42 -> 34 -> 19 -> 7 -> 17 -> 31 -> 36 -> 25 -> 40 -> 48 -> 22 -> 21 -> 8 -> 9 -> 12 -> 10 -> 11 -> 5 -> 2 -> 1 (Retorno)
+
+========================================================
+Instância Arquivo: TCC_Matriz_Separado_por_Problema - Min_P4.csv (Tamanho N = 36 Cidades)
+========================================================
+Vizinho Mais Próximo Puro (Sem Busca Local): 1950.00
+  -> MENOR VALOR ENCONTRADO (Com busca 2opt): 1681.00
+  -> TEMPO MÉDIO DE EXECUÇÃO:               1.51 ms
+  -> Rota do Circuito: 1 -> 2 -> 5 -> 11 -> 10 -> 12 -> 9 -> 8 -> 21 -> 22 -> 36 -> 25 -> 31 -> 7 -> 17 -> 20 -> 33 -> 19 -> 34 -> 16 -> 32 -> 26 -> 35 -> 13 -> 24 -> 29 -> 14 -> 18 -> 15 -> 28 -> 27 -> 6 -> 30 -> 23 -> 4 -> 3 -> 1 (Retorno)
+
+========================================================
+Instância Arquivo: TCC_Matriz_Separado_por_Problema - Min_P6.csv (Tamanho N = 24 Cidades)
+========================================================
+Vizinho Mais Próximo Puro (Sem Busca Local): 1283.00
+  -> MENOR VALOR ENCONTRADO (Com busca 2opt): 1237.00
+  -> TEMPO MÉDIO DE EXECUÇÃO:               0.24 ms
+  -> Rota do Circuito: 1 -> 23 -> 6 -> 15 -> 18 -> 14 -> 24 -> 13 -> 20 -> 16 -> 19 -> 7 -> 17 -> 22 -> 21 -> 8 -> 9 -> 12 -> 10 -> 11 -> 5 -> 2 -> 3 -> 4 -> 1 (Retorno)
+
+========================================================
+Instância Arquivo: TCC_Matriz_Separado_por_Problema - Min_P8.csv (Tamanho N = 12 Cidades)
+========================================================
+Vizinho Mais Próximo Puro (Sem Busca Local): 687.00
+  -> MENOR VALOR ENCONTRADO (Com busca 2opt): 606.00
+  -> TEMPO MÉDIO DE EXECUÇÃO:               0.05 ms
+  -> Rota do Circuito: 1 -> 6 -> 4 -> 3 -> 2 -> 8 -> 9 -> 12 -> 7 -> 5 -> 11 -> 10 -> 1 (Retorno)
+
