@@ -269,7 +269,7 @@ int main() {
       instances.begin(), instances.end(),
       [](const Instance &a, const Instance &b) { return a.name < b.name; });
 
-  std::ofstream txtOut("resultados_questao2.txt");
+  std::ofstream txtOut("./resultados/resultados_questao2.txt");
   std::string headerStr = "=== RESUMO DOS RESULTADOS (INSERÇÃO MAIS BARATA + "
                           "BUSCA LOCAL 2-OPT) ===";
 

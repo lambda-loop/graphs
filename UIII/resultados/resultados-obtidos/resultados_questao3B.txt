@@ -1,51 +1,51 @@
-=== RESUMO DOS RESULTADOS (ALGORITMO MEMÉTICO v2 - Farthest Insertion + ERX + Inversao) ===
+=== RESUMO DOS RESULTADOS (ALGORITMO GENÉTICO) ===
 
 ========================================================
 Instância Arquivo: TCC_Matriz_Separado_por_Problema - Km_P1.csv (Tamanho N = 48 Cidades)
 ========================================================
-  -> MENOR VALOR ENCONTRADO (20 iterações): 1942.30
-  -> VALOR MÉDIO ENCONTRADO:                1966.78
-  -> TEMPO MÉDIO DE EXECUÇÃO:               488.26 ms
-  -> Melhor Rota: 24 -> 29 -> 43 -> 14 -> 46 -> 45 -> 18 -> 15 -> 28 -> 44 -> 41 -> 27 -> 6 -> 30 -> 21 -> 9 -> 8 -> 1 -> 23 -> 4 -> 3 -> 2 -> 5 -> 11 -> 10 -> 12 -> 38 -> 22 -> 48 -> 40 -> 36 -> 25 -> 31 -> 17 -> 7 -> 19 -> 20 -> 33 -> 16 -> 34 -> 32 -> 26 -> 42 -> 35 -> 39 -> 47 -> 37 -> 13 -> 24 (Retorno)
+  -> MENOR VALOR ENCONTRADO (20 iterações): 1983.60
+  -> VALOR MÉDIO ENCONTRADO:                1983.60
+  -> TEMPO MÉDIO DE EXECUÇÃO:               102.45 ms
+  -> Melhor Rota: 15 -> 28 -> 44 -> 27 -> 6 -> 30 -> 41 -> 5 -> 11 -> 2 -> 3 -> 4 -> 23 -> 8 -> 1 -> 10 -> 12 -> 9 -> 21 -> 22 -> 48 -> 40 -> 36 -> 25 -> 31 -> 17 -> 7 -> 19 -> 20 -> 33 -> 16 -> 34 -> 32 -> 26 -> 42 -> 35 -> 39 -> 47 -> 37 -> 38 -> 13 -> 24 -> 29 -> 43 -> 14 -> 46 -> 45 -> 18 -> 15 (Retorno)
 
 ========================================================
 Instância Arquivo: TCC_Matriz_Separado_por_Problema - Km_P11.csv (Tamanho N = 6 Cidades)
 ========================================================
   -> MENOR VALOR ENCONTRADO (20 iterações): 344.90
-  -> VALOR MÉDIO ENCONTRADO:                344.90
-  -> TEMPO MÉDIO DE EXECUÇÃO:               7.40 ms
-  -> Melhor Rota: 4 -> 6 -> 3 -> 1 -> 2 -> 5 -> 4 (Retorno)
+  -> VALOR MÉDIO ENCONTRADO:                346.77
+  -> TEMPO MÉDIO DE EXECUÇÃO:               5.92 ms
+  -> Melhor Rota: 2 -> 5 -> 4 -> 6 -> 3 -> 1 -> 2 (Retorno)
 
 ========================================================
 Instância Arquivo: TCC_Matriz_Separado_por_Problema - Km_P3.csv (Tamanho N = 36 Cidades)
 ========================================================
-  -> MENOR VALOR ENCONTRADO (20 iterações): 1695.00
-  -> VALOR MÉDIO ENCONTRADO:                1698.65
-  -> TEMPO MÉDIO DE EXECUÇÃO:               233.84 ms
-  -> Melhor Rota: 8 -> 9 -> 21 -> 30 -> 6 -> 27 -> 28 -> 15 -> 18 -> 14 -> 29 -> 24 -> 13 -> 35 -> 26 -> 32 -> 34 -> 16 -> 33 -> 20 -> 19 -> 7 -> 17 -> 31 -> 25 -> 36 -> 22 -> 12 -> 10 -> 11 -> 5 -> 2 -> 3 -> 4 -> 23 -> 1 -> 8 (Retorno)
+  -> MENOR VALOR ENCONTRADO (20 iterações): 1721.80
+  -> VALOR MÉDIO ENCONTRADO:                1738.12
+  -> TEMPO MÉDIO DE EXECUÇÃO:               62.95 ms
+  -> Melhor Rota: 15 -> 18 -> 5 -> 14 -> 29 -> 24 -> 13 -> 35 -> 26 -> 32 -> 34 -> 16 -> 33 -> 20 -> 19 -> 7 -> 17 -> 31 -> 25 -> 36 -> 22 -> 21 -> 9 -> 8 -> 1 -> 12 -> 10 -> 11 -> 2 -> 3 -> 23 -> 4 -> 30 -> 6 -> 27 -> 28 -> 15 (Retorno)
 
 ========================================================
 Instância Arquivo: TCC_Matriz_Separado_por_Problema - Km_P5.csv (Tamanho N = 24 Cidades)
 ========================================================
-  -> MENOR VALOR ENCONTRADO (20 iterações): 1321.00
-  -> VALOR MÉDIO ENCONTRADO:                1321.00
-  -> TEMPO MÉDIO DE EXECUÇÃO:               87.66 ms
-  -> Melhor Rota: 2 -> 1 -> 23 -> 3 -> 4 -> 6 -> 15 -> 18 -> 14 -> 5 -> 24 -> 13 -> 20 -> 16 -> 19 -> 7 -> 17 -> 22 -> 21 -> 8 -> 9 -> 12 -> 10 -> 11 -> 2 (Retorno)
+  -> MENOR VALOR ENCONTRADO (20 iterações): 1341.80
+  -> VALOR MÉDIO ENCONTRADO:                1341.80
+  -> TEMPO MÉDIO DE EXECUÇÃO:               34.20 ms
+  -> Melhor Rota: 8 -> 1 -> 12 -> 10 -> 11 -> 2 -> 23 -> 3 -> 4 -> 6 -> 15 -> 18 -> 14 -> 5 -> 24 -> 13 -> 16 -> 19 -> 7 -> 17 -> 20 -> 22 -> 21 -> 9 -> 8 (Retorno)
 
 ========================================================
 Instância Arquivo: TCC_Matriz_Separado_por_Problema - Km_P7.csv (Tamanho N = 12 Cidades)
 ========================================================
   -> MENOR VALOR ENCONTRADO (20 iterações): 672.70
   -> VALOR MÉDIO ENCONTRADO:                672.70
-  -> TEMPO MÉDIO DE EXECUÇÃO:               20.95 ms
-  -> Melhor Rota: 9 -> 8 -> 1 -> 6 -> 4 -> 3 -> 2 -> 11 -> 5 -> 7 -> 12 -> 10 -> 9 (Retorno)
+  -> TEMPO MÉDIO DE EXECUÇÃO:               12.98 ms
+  -> Melhor Rota: 7 -> 12 -> 10 -> 9 -> 8 -> 1 -> 6 -> 4 -> 3 -> 2 -> 11 -> 5 -> 7 (Retorno)
 
 ========================================================
 Instância Arquivo: TCC_Matriz_Separado_por_Problema - Km_P9.csv (Tamanho N = 7 Cidades)
 ========================================================
   -> MENOR VALOR ENCONTRADO (20 iterações): 438.30
-  -> VALOR MÉDIO ENCONTRADO:                438.30
-  -> TEMPO MÉDIO DE EXECUÇÃO:               9.07 ms
+  -> VALOR MÉDIO ENCONTRADO:                438.70
+  -> TEMPO MÉDIO DE EXECUÇÃO:               6.90 ms
   -> Melhor Rota: 6 -> 5 -> 7 -> 2 -> 4 -> 3 -> 1 -> 6 (Retorno)
 
 ========================================================
@@ -53,46 +53,46 @@ Instância Arquivo: TCC_Matriz_Separado_por_Problema - Min_P10.csv (Tamanho N = 
 ========================================================
   -> MENOR VALOR ENCONTRADO (20 iterações): 364.00
   -> VALOR MÉDIO ENCONTRADO:                364.00
-  -> TEMPO MÉDIO DE EXECUÇÃO:               9.06 ms
-  -> Melhor Rota: 7 -> 2 -> 4 -> 3 -> 1 -> 6 -> 5 -> 7 (Retorno)
+  -> TEMPO MÉDIO DE EXECUÇÃO:               6.98 ms
+  -> Melhor Rota: 2 -> 7 -> 5 -> 6 -> 1 -> 3 -> 4 -> 2 (Retorno)
 
 ========================================================
 Instância Arquivo: TCC_Matriz_Separado_por_Problema - Min_P12.csv (Tamanho N = 6 Cidades)
 ========================================================
   -> MENOR VALOR ENCONTRADO (20 iterações): 305.00
   -> VALOR MÉDIO ENCONTRADO:                305.00
-  -> TEMPO MÉDIO DE EXECUÇÃO:               7.51 ms
+  -> TEMPO MÉDIO DE EXECUÇÃO:               6.09 ms
   -> Melhor Rota: 5 -> 1 -> 3 -> 4 -> 6 -> 2 -> 5 (Retorno)
 
 ========================================================
 Instância Arquivo: TCC_Matriz_Separado_por_Problema - Min_P2.csv (Tamanho N = 48 Cidades)
 ========================================================
-  -> MENOR VALOR ENCONTRADO (20 iterações): 1973.00
-  -> VALOR MÉDIO ENCONTRADO:                1975.30
-  -> TEMPO MÉDIO DE EXECUÇÃO:               497.17 ms
-  -> Melhor Rota: 15 -> 28 -> 44 -> 27 -> 6 -> 30 -> 41 -> 5 -> 11 -> 10 -> 1 -> 2 -> 3 -> 4 -> 23 -> 21 -> 8 -> 9 -> 12 -> 38 -> 20 -> 17 -> 25 -> 40 -> 48 -> 22 -> 36 -> 31 -> 7 -> 19 -> 33 -> 34 -> 16 -> 32 -> 26 -> 42 -> 35 -> 39 -> 47 -> 37 -> 13 -> 24 -> 29 -> 43 -> 14 -> 46 -> 45 -> 18 -> 15 (Retorno)
+  -> MENOR VALOR ENCONTRADO (20 iterações): 2071.00
+  -> VALOR MÉDIO ENCONTRADO:                2073.55
+  -> TEMPO MÉDIO DE EXECUÇÃO:               101.55 ms
+  -> Melhor Rota: 15 -> 28 -> 44 -> 5 -> 41 -> 27 -> 6 -> 30 -> 21 -> 23 -> 4 -> 3 -> 2 -> 1 -> 8 -> 9 -> 12 -> 11 -> 10 -> 36 -> 22 -> 48 -> 40 -> 25 -> 31 -> 7 -> 19 -> 17 -> 20 -> 33 -> 16 -> 34 -> 32 -> 26 -> 42 -> 35 -> 39 -> 47 -> 38 -> 37 -> 13 -> 24 -> 29 -> 43 -> 14 -> 46 -> 45 -> 18 -> 15 (Retorno)
 
 ========================================================
 Instância Arquivo: TCC_Matriz_Separado_por_Problema - Min_P4.csv (Tamanho N = 36 Cidades)
 ========================================================
-  -> MENOR VALOR ENCONTRADO (20 iterações): 1662.00
-  -> VALOR MÉDIO ENCONTRADO:                1663.80
-  -> TEMPO MÉDIO DE EXECUÇÃO:               242.64 ms
-  -> Melhor Rota: 4 -> 30 -> 6 -> 27 -> 28 -> 15 -> 18 -> 14 -> 29 -> 24 -> 13 -> 35 -> 26 -> 32 -> 16 -> 34 -> 33 -> 20 -> 19 -> 7 -> 17 -> 25 -> 31 -> 36 -> 22 -> 21 -> 8 -> 9 -> 12 -> 10 -> 11 -> 5 -> 2 -> 1 -> 23 -> 3 -> 4 (Retorno)
+  -> MENOR VALOR ENCONTRADO (20 iterações): 1690.00
+  -> VALOR MÉDIO ENCONTRADO:                1690.90
+  -> TEMPO MÉDIO DE EXECUÇÃO:               63.88 ms
+  -> Melhor Rota: 15 -> 18 -> 14 -> 29 -> 24 -> 13 -> 35 -> 26 -> 32 -> 16 -> 34 -> 33 -> 20 -> 17 -> 19 -> 7 -> 31 -> 25 -> 36 -> 22 -> 9 -> 8 -> 12 -> 10 -> 1 -> 11 -> 5 -> 2 -> 3 -> 4 -> 23 -> 21 -> 30 -> 6 -> 27 -> 28 -> 15 (Retorno)
 
 ========================================================
 Instância Arquivo: TCC_Matriz_Separado_por_Problema - Min_P6.csv (Tamanho N = 24 Cidades)
 ========================================================
-  -> MENOR VALOR ENCONTRADO (20 iterações): 1223.00
-  -> VALOR MÉDIO ENCONTRADO:                1223.40
-  -> TEMPO MÉDIO DE EXECUÇÃO:               91.64 ms
-  -> Melhor Rota: 17 -> 22 -> 21 -> 8 -> 9 -> 12 -> 10 -> 11 -> 1 -> 2 -> 3 -> 4 -> 23 -> 6 -> 15 -> 18 -> 14 -> 5 -> 24 -> 13 -> 20 -> 16 -> 19 -> 7 -> 17 (Retorno)
+  -> MENOR VALOR ENCONTRADO (20 iterações): 1290.00
+  -> VALOR MÉDIO ENCONTRADO:                1299.35
+  -> TEMPO MÉDIO DE EXECUÇÃO:               34.60 ms
+  -> Melhor Rota: 7 -> 17 -> 22 -> 12 -> 9 -> 8 -> 21 -> 23 -> 3 -> 4 -> 6 -> 15 -> 18 -> 14 -> 5 -> 11 -> 10 -> 1 -> 2 -> 24 -> 13 -> 20 -> 16 -> 19 -> 7 (Retorno)
 
 ========================================================
 Instância Arquivo: TCC_Matriz_Separado_por_Problema - Min_P8.csv (Tamanho N = 12 Cidades)
 ========================================================
   -> MENOR VALOR ENCONTRADO (20 iterações): 606.00
   -> VALOR MÉDIO ENCONTRADO:                606.00
-  -> TEMPO MÉDIO DE EXECUÇÃO:               21.84 ms
+  -> TEMPO MÉDIO DE EXECUÇÃO:               13.13 ms
   -> Melhor Rota: 6 -> 2 -> 1 -> 10 -> 11 -> 5 -> 7 -> 12 -> 9 -> 8 -> 3 -> 4 -> 6 (Retorno)
 

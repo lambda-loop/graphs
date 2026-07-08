@@ -4,7 +4,7 @@
 Instância Arquivo: TCC_Matriz_Separado_por_Problema - Km_P1.csv (Tamanho N = 48 Cidades)
 ========================================================
   -> VALOR OBTIDO:          2114.30
-  -> TEMPO DE EXECUÇÃO:     0.15 ms
+  -> TEMPO DE EXECUÇÃO:     0.80 ms
   -> Melhor Rota: 1 -> 10 -> 12 -> 38 -> 13 -> 37 -> 47 -> 39 -> 35 -> 42 -> 26 -> 32 -> 34 -> 16 -> 33 -> 20 -> 17 -> 19 -> 7 -> 31 -> 25 -> 40 -> 48 -> 36 -> 22 -> 9 -> 8 -> 21 -> 30 -> 6 -> 27 -> 28 -> 15 -> 18 -> 45 -> 44 -> 41 -> 4 -> 3 -> 23 -> 2 -> 24 -> 29 -> 43 -> 14 -> 46 -> 5 -> 11 -> 1 (Retorno)
 
 ========================================================
@@ -18,21 +18,21 @@ Instância Arquivo: TCC_Matriz_Separado_por_Problema - Km_P11.csv (Tamanho N = 6
 Instância Arquivo: TCC_Matriz_Separado_por_Problema - Km_P3.csv (Tamanho N = 36 Cidades)
 ========================================================
   -> VALOR OBTIDO:          1803.10
-  -> TEMPO DE EXECUÇÃO:     0.07 ms
+  -> TEMPO DE EXECUÇÃO:     0.35 ms
   -> Melhor Rota: 1 -> 12 -> 10 -> 11 -> 5 -> 2 -> 3 -> 4 -> 30 -> 6 -> 27 -> 28 -> 15 -> 18 -> 14 -> 29 -> 24 -> 13 -> 20 -> 17 -> 33 -> 16 -> 32 -> 35 -> 26 -> 34 -> 19 -> 7 -> 31 -> 25 -> 36 -> 22 -> 9 -> 8 -> 21 -> 23 -> 1 (Retorno)
 
 ========================================================
 Instância Arquivo: TCC_Matriz_Separado_por_Problema - Km_P5.csv (Tamanho N = 24 Cidades)
 ========================================================
   -> VALOR OBTIDO:          1351.00
-  -> TEMPO DE EXECUÇÃO:     0.09 ms
+  -> TEMPO DE EXECUÇÃO:     0.16 ms
   -> Melhor Rota: 1 -> 8 -> 9 -> 21 -> 23 -> 3 -> 4 -> 6 -> 15 -> 18 -> 14 -> 5 -> 24 -> 13 -> 20 -> 16 -> 19 -> 7 -> 17 -> 22 -> 12 -> 10 -> 11 -> 2 -> 1 (Retorno)
 
 ========================================================
 Instância Arquivo: TCC_Matriz_Separado_por_Problema - Km_P7.csv (Tamanho N = 12 Cidades)
 ========================================================
   -> VALOR OBTIDO:          699.20
-  -> TEMPO DE EXECUÇÃO:     0.00 ms
+  -> TEMPO DE EXECUÇÃO:     0.02 ms
   -> Melhor Rota: 1 -> 8 -> 9 -> 11 -> 10 -> 12 -> 7 -> 5 -> 2 -> 3 -> 4 -> 6 -> 1 (Retorno)
 
 ========================================================
@@ -60,27 +60,27 @@ Instância Arquivo: TCC_Matriz_Separado_por_Problema - Min_P12.csv (Tamanho N = 
 Instância Arquivo: TCC_Matriz_Separado_por_Problema - Min_P2.csv (Tamanho N = 48 Cidades)
 ========================================================
   -> VALOR OBTIDO:          2057.00
-  -> TEMPO DE EXECUÇÃO:     0.08 ms
+  -> TEMPO DE EXECUÇÃO:     0.96 ms
   -> Melhor Rota: 1 -> 8 -> 9 -> 12 -> 10 -> 11 -> 5 -> 46 -> 14 -> 43 -> 29 -> 24 -> 13 -> 37 -> 47 -> 39 -> 35 -> 42 -> 26 -> 32 -> 16 -> 34 -> 19 -> 33 -> 38 -> 20 -> 17 -> 7 -> 31 -> 36 -> 25 -> 40 -> 48 -> 22 -> 21 -> 30 -> 6 -> 27 -> 44 -> 28 -> 15 -> 18 -> 45 -> 41 -> 4 -> 3 -> 2 -> 23 -> 1 (Retorno)
 
 ========================================================
 Instância Arquivo: TCC_Matriz_Separado_por_Problema - Min_P4.csv (Tamanho N = 36 Cidades)
 ========================================================
   -> VALOR OBTIDO:          1842.00
-  -> TEMPO DE EXECUÇÃO:     0.03 ms
+  -> TEMPO DE EXECUÇÃO:     0.35 ms
   -> Melhor Rota: 1 -> 23 -> 10 -> 11 -> 13 -> 24 -> 29 -> 14 -> 5 -> 2 -> 3 -> 4 -> 18 -> 15 -> 28 -> 27 -> 6 -> 30 -> 21 -> 22 -> 36 -> 25 -> 17 -> 31 -> 7 -> 19 -> 32 -> 26 -> 35 -> 34 -> 16 -> 33 -> 20 -> 12 -> 9 -> 8 -> 1 (Retorno)
 
 ========================================================
 Instância Arquivo: TCC_Matriz_Separado_por_Problema - Min_P6.csv (Tamanho N = 24 Cidades)
 ========================================================
   -> VALOR OBTIDO:          1290.00
-  -> TEMPO DE EXECUÇÃO:     0.01 ms
+  -> TEMPO DE EXECUÇÃO:     0.12 ms
   -> Melhor Rota: 1 -> 11 -> 10 -> 12 -> 9 -> 21 -> 22 -> 17 -> 7 -> 19 -> 16 -> 20 -> 13 -> 24 -> 14 -> 5 -> 2 -> 3 -> 4 -> 18 -> 15 -> 6 -> 23 -> 8 -> 1 (Retorno)
 
 ========================================================
 Instância Arquivo: TCC_Matriz_Separado_por_Problema - Min_P8.csv (Tamanho N = 12 Cidades)
 ========================================================
   -> VALOR OBTIDO:          609.00
-  -> TEMPO DE EXECUÇÃO:     0.00 ms
+  -> TEMPO DE EXECUÇÃO:     0.02 ms
   -> Melhor Rota: 1 -> 6 -> 4 -> 3 -> 2 -> 5 -> 11 -> 10 -> 12 -> 7 -> 9 -> 8 -> 1 (Retorno)
 

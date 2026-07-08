@@ -596,7 +596,7 @@ int main() {
         return a.name < b.name;
     });
 
-    std::ofstream txtOut("resultados_questao4B.txt");
+    std::ofstream txtOut("./resultados/resultados_questao4B.txt");
     std::string headerStr = "=== RESUMO DOS RESULTADOS (ALGORITMO MEMÉTICO v2 - Farthest Insertion + ERX + Inversao) ===";
 
     std::cout << headerStr << "\n" << std::endl;

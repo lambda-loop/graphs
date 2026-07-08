@@ -223,7 +223,7 @@ int main() {
     
     std::cout << "Sucesso! Foram processados " << instances.size() << " arquivos CSV.\n" << std::endl;
     
-    std::ofstream txtOut("resultados_questao1.txt");
+    std::ofstream txtOut("./resultados/resultados_questao1.txt");
     std::string headerStr = "=== RESUMO DOS RESULTADOS (VIZINHO MAIS PRÓXIMO DETERMINÍSTICO + BUSCA LOCAL 2-OPT) ===";
     
     std::cout << headerStr << "\n" << std::endl;

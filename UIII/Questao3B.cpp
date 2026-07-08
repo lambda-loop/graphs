@@ -489,7 +489,7 @@ int main() {
       instances.begin(), instances.end(),
       [](const Instance &a, const Instance &b) { return a.name < b.name; });
 
-  std::ofstream txtOut("resultados_questao3B.txt");
+  std::ofstream txtOut("./resultados/resultados_questao3B.txt");
   std::string headerStr = "=== RESUMO DOS RESULTADOS (ALGORITMO GENÉTICO) ===";
 
   std::cout << headerStr << "\n" << std::endl;
@@ -497,8 +497,8 @@ int main() {
     txtOut << headerStr << "\n\n";
 
   // Hiperparâmetros do Algoritmo Genético
-  int POP_SIZE = 100;
-  int GENERATIONS = 500;
+  int POP_SIZE = 20;
+  int GENERATIONS = 50;
   double CROSSOVER_RATE = 0.85;
   double MUTATION_RATE = 0.10;
   int ITERATIONS = 20; // Conforme exigido na regra (5) do descritivo
@@ -558,7 +558,7 @@ int main() {
 
   if (txtOut.is_open()) {
     txtOut.close();
-    std::cout << "Resumo gerado no arquivo 'resultados_questao3.txt'."
+    std::cout << "Resumo gerado no arquivo 'resultados_questao3B.txt'."
               << std::endl;
   }
 

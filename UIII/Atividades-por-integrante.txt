@@ -1,0 +1,14 @@
+Alexandre Ribeiro Nunes Filho :
+    - Implementação 1 do algoritmo memético (Questao4A.cpp)
+    - Revisão do algoritmo genético 1 (Questao3A.cpp)
+André Lucas Gonçalves Gomes :
+    - Implementação da heuristica de vizinho mais próximo + Busca local 2-Opt (Questao1.cpp)
+    - Implementação 2 do algoritmo memético (Questao4B.cpp)
+    - Rodar todos os algoritmos para gerar a tabela de resultados
+Cicero Paulino de Oliveira :
+    - Implementação da heuristica de implementação mais barata + Busca local (Questao2.cpp)
+Haniel Lucas Machado :
+    - Implementação 1 do algoritmo genético (Questao3A.cpp)
+José Ivo Schwade Araújo :
+    - Revisão da implementação 1 do algoritmo genético (Questao3A.cpp)
+    - Implementação 2 do algoritmo genético (Questao3B.cpp)

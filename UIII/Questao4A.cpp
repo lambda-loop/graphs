@@ -478,7 +478,7 @@ int main() {
         return a.name < b.name;
     });
 
-    std::ofstream txtOut("resultados_questao4.txt");
+    std::ofstream txtOut("./resultados/resultados_questao4A.txt");
     std::string headerStr = "=== RESUMO DOS RESULTADOS (ALGORITMO MEMÉTICO) ===";
 
     std::cout << headerStr << "\n" << std::endl;
